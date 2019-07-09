@@ -1,0 +1,9 @@
+{
+  "name": "studiodagger",
+  "version": "1.0.0",
+  "description": "The personal portfolio and blog site of Nirjan Khadka built using gatsby and react",
+  "main": "gatsby-config.js",
+  "author": "Nirjan Khadka",
+  "license": "MIT",
+  "private": true
+}
