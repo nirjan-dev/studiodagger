@@ -8,11 +8,16 @@
   "private": true,
   "dependencies": {
     "gatsby": "^2.13.9",
+    "gatsby-plugin-typescript": "^2.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
   "scripts": {
     "develop": "gatsby develop",
-    "build": "gatsby build"
+    "build": "gatsby build",
+    "type-check": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^3.5.3"
   }
 }
