@@ -7,6 +7,8 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "axe-core": "^3.3.0",
+    "cypress-axe": "^0.5.1",
     "gatsby": "^2.13.9",
     "gatsby-plugin-typescript": "^2.1.0",
     "react": "^16.8.6",
@@ -17,18 +19,24 @@
     "build": "gatsby build",
     "type-check": "tsc",
     "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
-    "lint:fix": "yarn lint --fix"
+    "lint:fix": "yarn lint --fix",
+    "cy:open": "cypress open",
+    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open"
   },
   "devDependencies": {
+    "@testing-library/cypress": "^4.0.4",
     "@typescript-eslint/eslint-plugin": "^1.11.0",
     "@typescript-eslint/parser": "^1.11.0",
+    "cypress": "^3.3.2",
     "eslint": "^6.0.1",
     "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-cypress": "^2.2.1",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.2",
     "husky": "^3.0.0",
     "lint-staged": "^9.1.0",
     "prettier": "^1.18.2",
+    "start-server-and-test": "^1.9.1",
     "typescript": "^3.5.3"
   }
 }
