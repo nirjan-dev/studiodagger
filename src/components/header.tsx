@@ -1,18 +1,20 @@
 import React from 'react';
 import NavBrand from './ui/navBrand';
 import Navbar from './ui/navbar';
+import styled from '@emotion/styled';
+
+const HeaderStyled = styled.header`
+  display: flex;
+  padding: 0.2rem 1rem;
+  align-items: center;
+`;
+
 function Header() {
   return (
-    <header
-      style={{
-        display: 'flex',
-        padding: '0.2rem 1rem',
-      }}
-      role="primary"
-    >
+    <HeaderStyled role="primary">
       <NavBrand />
       <Navbar />
-    </header>
+    </HeaderStyled>
   );
 }
 

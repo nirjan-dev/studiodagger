@@ -18,6 +18,13 @@ function Layout({ children }: LayoutProps) {
             a {
               box-shadow: none;
             }
+
+            .hidden {
+              visibility: hidden;
+              opacity: 0;
+              font-size: 0.1px;
+              position: absolute;
+            }
           `}
         />
         <Header />

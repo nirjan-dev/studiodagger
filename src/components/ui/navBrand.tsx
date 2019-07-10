@@ -1,23 +1,20 @@
 import React from 'react';
 import { Link } from 'gatsby';
-
+import styled from '@emotion/styled';
 import logo from '../../images/logo/logo.png';
+
+const Img = styled.img`
+  max-height: 3rem;
+  padding: 0.2rem;
+`;
 
 function NavBrand() {
   return (
     <Link to="/">
-      <h1
-        aria-hidden="true"
-        style={{
-          visibility: 'hidden',
-          opacity: 0,
-          fontSize: '0.1px',
-          position: 'absolute',
-        }}
-      >
+      <h1 aria-hidden="true" className="hidden">
         Studio Dagger
       </h1>
-      <img
+      <Img
         style={{
           maxHeight: '3rem',
         }}
