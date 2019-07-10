@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 function Navbar() {
   return (
     <nav
-      role="main"
+      role="primary"
       style={{
         flex: 1,
       }}
@@ -16,23 +16,42 @@ function Navbar() {
         }}
       >
         <li>
-          <Link style={{ marginLeft: '0.5rem', textDecoration: 'none' }} to="/">
+          <Link
+            style={{
+              marginLeft: '1.5rem',
+              color: '#333',
+              textDecoration: 'none',
+            }}
+            to="/"
+          >
             Home
           </Link>
           <Link
-            style={{ marginLeft: '0.5rem', textDecoration: 'none' }}
+            style={{
+              marginLeft: '1.5rem',
+              color: '#333',
+              textDecoration: 'none',
+            }}
             to="/about"
           >
             About
           </Link>
           <Link
-            style={{ marginLeft: '0.5rem', textDecoration: 'none' }}
+            style={{
+              marginLeft: '1.5rem',
+              color: '#333',
+              textDecoration: 'none',
+            }}
             to="/blog"
           >
             Blog
           </Link>
           <Link
-            style={{ marginLeft: '0.5rem', textDecoration: 'none' }}
+            style={{
+              marginLeft: '1.5rem',
+              color: '#333',
+              textDecoration: 'none',
+            }}
             to="/contact"
           >
             Contact

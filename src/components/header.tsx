@@ -8,7 +8,7 @@ function Header() {
         display: 'flex',
         padding: '0.2rem 1rem',
       }}
-      role="main"
+      role="primary"
     >
       <NavBrand />
       <Navbar />
