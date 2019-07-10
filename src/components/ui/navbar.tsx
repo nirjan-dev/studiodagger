@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import styled from '@emotion/styled';
+
+const Nav = styled.nav`
+  flex: 1;
+`;
+
 function Navbar() {
   return (
-    <nav
-      role="primary"
-      style={{
-        flex: 1,
-      }}
-    >
+    <Nav role="primary">
       <ul
         style={{
           display: 'flex',
@@ -58,7 +59,7 @@ function Navbar() {
           </Link>
         </li>
       </ul>
-    </nav>
+    </Nav>
   );
 }
 
