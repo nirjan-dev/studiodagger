@@ -4,8 +4,9 @@ import styled from '@emotion/styled';
 import logo from '../../images/logo/logo.png';
 
 const Img = styled.img`
-  max-height: 3rem;
-  padding: 0.2rem;
+  height: 3.8rem;
+  padding: 0.4rem;
+  margin: 0;
 `;
 
 function NavBrand() {
@@ -14,13 +15,7 @@ function NavBrand() {
       <h1 aria-hidden="true" className="hidden">
         Studio Dagger
       </h1>
-      <Img
-        style={{
-          maxHeight: '3rem',
-        }}
-        src={logo}
-        alt="studio dagger"
-      />
+      <Img src={logo} alt="studio dagger" />
     </Link>
   );
 }
