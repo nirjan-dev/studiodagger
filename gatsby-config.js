@@ -9,6 +9,21 @@ module.exports = {
     twitterUsername: '@NirjanKhadka',
   },
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/images/`,
+        name: `images`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaultQuality: 80,
+        stripMetadata: true,
+      },
+    },
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,

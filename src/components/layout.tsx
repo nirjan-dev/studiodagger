@@ -21,6 +21,10 @@ function Layout({ children, pageContext }: LayoutProps) {
       <ThemeProvider theme={theme}>
         <Global
           styles={css`
+            * {
+              margin: 0;
+              padding: 0;
+            }
             a {
               box-shadow: none;
             }

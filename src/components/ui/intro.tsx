@@ -5,21 +5,25 @@ import StyledLink from '../ui/StyledLink';
 
 const IntroBanner = styled.div`
   background: ${props => props.theme.colors.secondaryGradient};
-  padding: 5rem 4rem 8rem;
+  padding: 2rem 4rem 10rem;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  clip-path: polygon(0 0, 100% 0, 100% 66%, 0 100%);
+
   p {
     line-height: 1.8;
-    max-width: 40ch;
+    max-width: 60ch;
   }
 
   @media (max-width: 660px) {
-    padding: 4rem 3rem 6rem;
+    padding: 0rem 4rem 7rem;
   }
 
   @media (max-width: 480px) {
-    padding: 1rem 1.5rem 3rem;
+    padding: 0rem 0.5rem 4rem;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   }
 `;
 function Intro() {

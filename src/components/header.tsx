@@ -5,12 +5,13 @@ import styled from '@emotion/styled';
 import NavToggle from '../components/ui/navToggle';
 const HeaderStyled = styled.header`
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: minmax(80px, 180px) 1fr;
   padding: 0rem 1rem;
   align-items: center;
   border-bottom: 2px solid ${props => props.theme.colors.primaryExtraLight};
   @media (max-width: 844px) {
-    grid-template-columns: 1fr 100px;
+    grid-template-columns: minmax(80px, 180px) 100px;
+    justify-content: space-between;
   }
 `;
 
