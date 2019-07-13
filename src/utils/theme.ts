@@ -6,6 +6,7 @@ const theme = {
     primaryExtraLight: '#fbeaff',
     dark: '#333',
     light: '#fefefe',
+    darkLight: '#888',
     primaryGradient: 'linear-gradient(to right, #8e2de2, #4a00e0)',
     secondaryGradient: 'linear-gradient(to right, #00c9ff, #92fe9d)',
   },

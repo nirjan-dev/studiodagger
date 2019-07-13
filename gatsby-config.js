@@ -7,6 +7,9 @@ module.exports = {
     url: 'http://localhost:8000',
     image: '/images/favicon.png',
     twitterUsername: '@NirjanKhadka',
+    facebookUsername: 'NirjanKhadka13',
+    instagramUsername: 'NirjanKhadka13',
+    githubUsername: 'NK-WebDev',
   },
   plugins: [
     {
@@ -14,6 +17,13 @@ module.exports = {
       options: {
         path: `${__dirname}/src/images/`,
         name: `images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `portfolio`,
+        path: `${__dirname}/content/portfolio/`,
       },
     },
     {

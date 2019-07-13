@@ -5,6 +5,7 @@ import { ThemeProvider } from 'emotion-theming';
 import theme from '../utils/theme';
 import { Global, css } from '@emotion/core';
 import SEO from '../components/SEO';
+import Footer from './footer';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -39,7 +40,8 @@ function Layout({ children, pageContext }: LayoutProps) {
         />
         <SEO title={pageContext.frontmatter.title} />
         <Header />
-        <main>{children}</main>
+        <main style={{ minHeight: '100vh' }}>{children}</main>
+        <Footer />
       </ThemeProvider>
     </React.Fragment>
   );

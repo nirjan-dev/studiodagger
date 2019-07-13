@@ -33,10 +33,10 @@ function Intro() {
         <div>
           <h2>Hello, I'm Nirjan 👋</h2>
           <p>
-            As a full stack web developer I design and create websites and web
+            As a full stack web developer, I design and create websites and web
             applications that are accessible, user-friendly and optimized. If
             you need someone who is passionate about using their coding skills
-            to create wonderful web expreiences for people then I'm your guy..
+            to create wonderful web experiences for people then I'm your guy..
           </p>
           <StyledLink to="/contact">Get in touch</StyledLink>
         </div>
