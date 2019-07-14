@@ -37,10 +37,21 @@ function PostList() {
       }
     }
   `);
+  interface Edge {
+    node: {
+      frontmatter: {
+        title: string;
+        slug: string;
+        date: string;
+      };
+      excerpt: string;
+      timeToRead: string;
+    };
+  }
   return (
     <PostListSection>
       <ul>
-        {data.allMdx.edges.map(({ node }) => (
+        {data.allMdx.edges.map(({ node }: Edge) => (
           <li key={node.frontmatter.slug}>
             <Link to={`/${node.frontmatter.slug}`}>
               <h3 className="title">{node.frontmatter.title}</h3>
