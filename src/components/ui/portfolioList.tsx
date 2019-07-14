@@ -79,7 +79,12 @@ interface Project {
 function PortFolioList({ title }: PortFolioListProps) {
   const data = useStaticQuery(graphql`
     {
-      allMdx(filter: { frontmatter: { publish: { eq: true } } }) {
+      allMdx(
+        filter: {
+          frontmatter: { publish: { eq: true } }
+          fields: { collection: { eq: "portfolio" } }
+        }
+      ) {
         nodes {
           frontmatter {
             title

@@ -67,7 +67,7 @@ function Footer() {
           </li>
           <li>
             <a
-              href={`https://github.com/${result.site.siteMetadata.twitterUsername}`}
+              href={`https://github.com/${result.site.siteMetadata.githubUsername}`}
               rel="noopener noreferrer"
               target="_blank"
             >

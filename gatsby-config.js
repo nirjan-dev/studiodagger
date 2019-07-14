@@ -8,7 +8,7 @@ module.exports = {
     image: '/images/favicon.png',
     twitterUsername: '@NirjanKhadka',
     facebookUsername: 'NirjanKhadka13',
-    instagramUsername: 'NirjanKhadka13',
+    instagramUsername: 'nk13.dev',
     githubUsername: 'NK-WebDev',
   },
   plugins: [
@@ -24,6 +24,13 @@ module.exports = {
       options: {
         name: `portfolio`,
         path: `${__dirname}/content/portfolio/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/content/blog/`,
       },
     },
     {
@@ -49,6 +56,7 @@ module.exports = {
         defaultLayouts: {
           default: require.resolve('./src/components/layout.tsx'),
           portfolio: require.resolve('./src/components/portfolio.tsx'),
+          posts: require.resolve('./src/components/post.tsx'),
         },
         gatsbyRemarkPlugins: [
           {
@@ -78,6 +86,12 @@ module.exports = {
       resolve: `gatsby-plugin-page-creator`,
       options: {
         path: `${__dirname}/content/portfolio/`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/content/blog/`,
       },
     },
   ],
