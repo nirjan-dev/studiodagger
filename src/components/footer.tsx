@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from './ui/Container';
+import Container from './ui/container';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from '@emotion/styled';
 
@@ -23,15 +23,9 @@ const StyledFooter = styled.footer`
       display: block;
     }
     a {
-      margin: 0 2rem;
-      transition: color 200ms cubic-bezier(0.39, 0.58, 0.57, 1);
+      margin: 0 1.2rem;
       font-weight: bold;
-      font-size: 80%;
-      &:hover,
-      &:active,
-      &:focus {
-        color: ${props => props.theme.colors.primary};
-      }
+      font-size: 90%;
     }
   }
 `;

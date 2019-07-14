@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import styled from '@emotion/styled';
-import StyledLink from '../ui/StyledLink';
+import StyledLink from './styledLink';
 
 const IntroBanner = styled.div`
   background: ${props => props.theme.colors.secondaryGradient};

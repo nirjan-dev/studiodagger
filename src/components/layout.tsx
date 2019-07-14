@@ -28,6 +28,12 @@ function Layout({ children, pageContext }: LayoutProps) {
             }
             a {
               box-shadow: none;
+              transition: color 200ms cubic-bezier(0.39, 0.58, 0.57, 1);
+              &:hover,
+              &:active,
+              &:focus {
+                color: ${theme.colors.secondary};
+              }
             }
 
             .hidden {

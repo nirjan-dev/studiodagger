@@ -8,10 +8,6 @@ const navItems = [
     link: '/',
   },
   {
-    name: 'About',
-    link: '/about',
-  },
-  {
     name: 'Blog',
     link: '/blog',
   },

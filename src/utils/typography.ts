@@ -1,6 +1,6 @@
 import Typography from 'typography';
-import wordPress2016Theme from 'typography-theme-wordpress-2016';
+import grandView from 'typography-theme-grand-view';
 
-const typography = new Typography(wordPress2016Theme);
+const typography = new Typography(grandView);
 
 export default typography;

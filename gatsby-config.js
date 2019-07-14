@@ -48,7 +48,36 @@ module.exports = {
       options: {
         defaultLayouts: {
           default: require.resolve('./src/components/layout.tsx'),
+          portfolio: require.resolve('./src/components/portfolio.tsx'),
         },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              linkImagesToOriginal: false,
+              quality: 80,
+              withWebP: true,
+            },
+          },
+        ],
+
+        // this config fixes the mdx remark images form having a big padding top
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              linkImagesToOriginal: false,
+              quality: 80,
+              withWebP: true,
+            },
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/content/portfolio/`,
       },
     },
   ],

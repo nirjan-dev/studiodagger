@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from '../ui/Container';
+import Container from './container';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import Img, { FluidObject } from 'gatsby-image';
 import styled from '@emotion/styled';
@@ -40,11 +40,17 @@ const PortfolioGrid = styled.ul`
     }
   }
   .project-link {
-    transition: color 200ms cubic-bezier(0.39, 0.58, 0.57, 1);
+    .project-title {
+      transition: color 200ms cubic-bezier(0.39, 0.58, 0.57, 1);
+    }
+
     &:hover,
     &:active,
     &:focus {
-      color: ${props => props.theme.colors.primary};
+      .project-title {
+        color: ${props => props.theme.colors.primary};
+      }
+
       .project-thumbnail::before {
         transform: scale(1);
         opacity: 0.6;
@@ -101,7 +107,7 @@ function PortFolioList({ title }: PortFolioListProps) {
             <li className="project" key={project.frontmatter.slug}>
               <Link
                 className="project-link"
-                to={`/work/${project.frontmatter.slug}`}
+                to={`/${project.frontmatter.slug}`}
               >
                 <Img
                   className="project-thumbnail"
