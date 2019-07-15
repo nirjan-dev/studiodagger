@@ -36,7 +36,8 @@ function Intro() {
             As a full stack web developer, I design and create websites and web
             applications that are accessible, user-friendly and optimized. If
             you need someone who is passionate about using their coding skills
-            to create wonderful web experiences for people then I'm your guy..
+            to create wonderful web experiences for your users then I'm your
+            guy.
           </p>
           <StyledLink to="/contact">Get in touch</StyledLink>
         </div>

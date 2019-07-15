@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 import isEmail from 'validator/lib/isEmail';
 import StyledButton from './ui/styledButton';
 import Loading from './ui/loading';
-import { string } from 'prop-types';
 
 const StatusScreen = styled.div`
   .msg {
@@ -82,6 +81,19 @@ function ContactForm() {
   const [emailError, setEmailError] = useState<string | null>(null);
   const [descriptionError, setDescriptionError] = useState<string | null>(null);
 
+  interface DataForm {
+    ['form-name']: string;
+    [name: string]: string;
+    description: string;
+    email: string;
+  }
+
+  const encode = function encodeForm(data: DataForm): string {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&');
+  };
+
   const validateForm = function formValidation() {
     // reset form errors and validate again
     setNameError(null);
@@ -112,15 +124,15 @@ function ContactForm() {
       return;
     }
     setSending(true);
-    const body = new FormData();
-    body.append('form-name', 'contact');
-    body.append('name', name);
-    body.append('email', email);
-    body.append('description', description);
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: body,
+      body: encode({
+        'form-name': 'contact',
+        name,
+        email,
+        description,
+      }),
     })
       .then(() => {
         setSending(false);
@@ -149,7 +161,20 @@ function ContactForm() {
     );
   } else {
     content = (
-      <CustomForm onSubmit={e => handleSubmit(e)}>
+      <CustomForm
+        name="contact"
+        action="/contact"
+        method="post"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        onSubmit={e => handleSubmit(e)}
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <div hidden>
+          <label>
+            Don’t fill this out: <input name="bot-field" />
+          </label>
+        </div>
         <div className="form-group">
           <input
             placeholder="Your Name"
