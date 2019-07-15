@@ -5,7 +5,7 @@ module.exports = {
   description:
     'A Gatsby V2 Starter Template Built with a Step By Step GuiFull Stack JavaScript Developer and Designer making beautiful,optimized and user friendly accessible websites with HTML, CSS, JS, React.js, Node.js, Next.js, Nest.js, Gatsby.js',
   url: 'https://www.studiodagger.com', // Site domain without trailing slash
-  siteURL: 'https://www.studiodagger.com/', // url + pathPrefix
+  siteUrl: 'https://www.studiodagger.com/', // url + pathPrefix
   siteLanguage: 'en', // Language Tag on <html> element
   logo: '/images/logo/logo.png',
   image: '/images/banner.png',
