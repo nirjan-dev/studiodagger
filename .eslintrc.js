@@ -28,6 +28,7 @@ module.exports = {
   rules: {
     'react/prop-types': 'off', // disable prop types as we use typescript for type checking
     '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/camelcase': 'off',
   },
   overrides: [
     // overrides some typescript rules just for .js files

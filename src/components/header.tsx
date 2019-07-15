@@ -19,7 +19,7 @@ function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <HeaderStyled role="primary">
+    <HeaderStyled>
       <NavBrand />
       <NavToggle
         isOpen={isOpen}

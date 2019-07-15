@@ -1,11 +1,8 @@
+const config = require('./config/site');
 module.exports = {
   siteMetadata: {
-    title: 'Studio Dagger',
+    ...config,
     titleTemplate: '%s | Studio Dagger',
-    description:
-      'Full Stack JavaScript Developer and Designer making beautiful,optimized and user friendly accessible websites with HTML, CSS, JS, React.js, Node.js, Next.js, Nest.js, Gatsby.js',
-    url: 'https://www.studiodagger.com',
-    image: '/images/favicon.png',
     twitterUsername: '@NirjanKhadka',
     facebookUsername: 'NirjanKhadka13',
     instagramUsername: 'nk13.dev',
@@ -94,5 +91,20 @@ module.exports = {
         path: `${__dirname}/content/blog/`,
       },
     },
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: config.title,
+        short_name: config.shortName,
+        description: config.description,
+        start_url: config.pathPrefix,
+        background_color: config.backgroundColor,
+        theme_color: config.themeColor,
+        display: 'standalone',
+        icon: config.favicon,
+      },
+    },
+    `gatsby-plugin-offline`,
   ],
 };

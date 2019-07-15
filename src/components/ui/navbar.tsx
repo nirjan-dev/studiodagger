@@ -123,7 +123,7 @@ interface NavbarProps {
 
 function Navbar({ isOpen }: NavbarProps) {
   return (
-    <Nav role="primary" className={isOpen ? 'is-open' : ''}>
+    <Nav className={isOpen ? 'is-open' : ''}>
       <Ul>
         {navItems.map(item => (
           <li key={item.name}>

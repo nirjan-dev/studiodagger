@@ -11,6 +11,15 @@ const StyledFooter = styled.footer`
   justify-content: center;
   align-items: center;
   margin-top: 6rem;
+  a {
+    color: ${props => props.theme.colors.dark};
+    &:hover,
+    &:active,
+    &:focus {
+      color: ${props => props.theme.colors.secondary};
+    }
+  }
+
   @media (max-width: 630px) {
     padding: 1rem 0;
   }

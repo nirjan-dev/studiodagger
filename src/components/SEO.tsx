@@ -20,6 +20,7 @@ function SEO({ title, description, pathname, article }: SEOProps) {
   const result = useStaticQuery(graphql`
     {
       site {
+        buildTime(formatString: "YYYY-MM-DD")
         siteMetadata {
           title
           titleTemplate
@@ -27,6 +28,11 @@ function SEO({ title, description, pathname, article }: SEOProps) {
           url
           image
           twitterUsername
+          titleAlt
+          author
+          logo
+          siteLanguage
+          shortName
         }
       }
     }
@@ -44,31 +50,37 @@ function SEO({ title, description, pathname, article }: SEOProps) {
 
   const titleTemplate = result.site.siteMetadata.titleTemplate;
 
-  // TODO: add an image field to siteMetadata for og:image meta tag and change current image field to favicon
+  const siteLanguage = result.site.siteMetadata.siteLanguage;
+  const shortName = result.site.siteMetadata.shortName;
 
-  // TODO: fix the favicon image not showing
+  // todo: add jsonld snippets
 
   return (
-    <Helmet title={title} titleTemplate={titleTemplate}>
-      <meta name="description" content={description} />
-      {url && <meta property="og:url" content={url} />}
-      {(article ? true : null) && <meta property="og:type" content="article" />}
-      {title && <meta property="og:title" content={title} />}
+    <>
+      <Helmet title={title} titleTemplate={titleTemplate}>
+        <html lang={siteLanguage} />
+        <meta name="description" content={description} />
+        <meta name="image" content={image} />
+        <meta name="apple-mobile-web-app-title" content={shortName} />
+        <meta name="application-name" content={shortName} />
 
-      <meta name="twitter:card" content="summary_large_image" />
+        {/* OpenGraph  */}
+        <meta property="og:url" content={url} />
 
-      {description && <meta property="og:description" content={description} />}
+        {article ? <meta property="og:type" content="article" /> : null}
 
-      {twitterUsername && (
-        <meta name="twitter:creator" content="twitterUsername" />
-      )}
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={image} />
 
-      {title && <meta name="twitter:title" content={title} />}
-
-      {description && <meta name="twitter:description" content={description} />}
-
-      <link rel="icon" type="image/png" href={image} />
-    </Helmet>
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:creator" content={twitterUsername} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={image} />
+      </Helmet>
+    </>
   );
 }
 
