@@ -64,6 +64,7 @@ module.exports = {
               withWebP: true,
             },
           },
+          `gatsby-remark-prismjs`,
         ],
 
         // this config fixes the mdx remark images form having a big padding top

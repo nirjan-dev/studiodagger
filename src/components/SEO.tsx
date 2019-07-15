@@ -20,7 +20,6 @@ function SEO({ title, description, pathname, article }: SEOProps) {
   const result = useStaticQuery(graphql`
     {
       site {
-        buildTime(formatString: "YYYY-MM-DD")
         siteMetadata {
           title
           titleTemplate
@@ -28,9 +27,6 @@ function SEO({ title, description, pathname, article }: SEOProps) {
           url
           image
           twitterUsername
-          titleAlt
-          author
-          logo
           siteLanguage
           shortName
         }

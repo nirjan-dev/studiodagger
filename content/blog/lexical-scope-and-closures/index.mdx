@@ -15,13 +15,18 @@ _Scope consists of a series of bubbles that each act as a container or bucket in
 
 Scope is just the set of rules that govern how the JavaScript engine can look up a variable and figure out it's value. JavaScript had only function scope (with a few exceptions) until es6 which meant that whenever a new function was declared a new scope was created.
 
-`//global scope`
-`var i = 666`
-`console.log(i) // 666`
+```javascript
+//global scope
+var i = 666;
+console.log(i); // 666
 
-`function foo(){ var i = 777; console.log(i) }`
+function foo() {
+  var i = 777;
+  console.log(i);
+}
 
-`foo(); // scope of foo`
+foo(); // scope of foo
+```
 
 // note: you might have heard the term lexical scope which is the scope that is defined during a step in the compilation process called lexing. It basically means the scope that is defined when you are writing the code i.e declaring functions.
 
@@ -29,36 +34,68 @@ Scope is just the set of rules that govern how the JavaScript engine can look up
 
 ES6 introduced two different ways to declare variables using let and const which can used to for block scoping. In other words, now whenever you use let or const to declare variables they are scoped to the block (any code surrounded by a pair of curly brackets).
 
-`//global scope`
-`var i = 666`
-`console.log(i) // 666`
+```javascript
+//global scope
+var i = 666;
+console.log(i); // 666
 
-`if(true){ let i = 777; console.log(i) // 777 }`
+if (true) {
+  let i = 777;
+  console.log(i); // 777
+}
+```
 
 ### Scopes are nested
 
 Another important thing you need to know before we dive into closures is that scopes are nested. The inner scope has access to the outer enclosing scope but the outer scope can't access the inner scope.
 
-`function foo(){ let i = 777; console.log(i) // 777 console.log(b) // Refference Error function barr(){ console.log(i) // 777 console.log(c) // Refference Error let b = "hello"; { console.log(b) // hello let c = "bye"; } } }`
+```javascript
+function foo() {
+  let i = 777;
+  console.log(i); // 777
+  console.log(b); // Refference Error
+
+  function barr() {
+    console.log(i); // 777
+    console.log(c); // Refference Error
+    let b = 'hello';
+    {
+      console.log(b);
+      // hello
+      let c = 'bye';
+    }
+  }
+}
+```
 
 ### What are closures
 
 _Closure is when a function can remember and access it's scope even when it's called outside it's scope_
 
-`function foo(){ let a = 666; function bar(){ console.log(a); // 666 } bar(); } foo();`
+````javascript
+function foo(){
+    let a = 666;
+    function bar(){
+        console.log(a); // 666
+    }
+    bar();
+}
+foo();```
+
 This is a pretty simple function which just showcases the nesting of scope. when bar is called it has access to the variable 'a' so it can successfully console the value. Now, take a look at the next example which does the same thing but uses closure.
 
-`function foo() {
-let a =666;
-function bar(){
-console.log(a);
-}
-return bar;
+```javascript
+function foo() {
+    let a =666;
+    function bar(){
+        console.log(a);
+    }
+    return bar;
 }
 let myFunc = foo() // now myFunc has the reference to the bar function inside foo.
 
 myFunc() // 666;
-`
+````
 
 Now this code basically does the exact same thing but with closure. When the foo function is called the 'a' variable is declared so You might expect the 'a' variable to not be available after the call since it is inside the scope of foo but as I mentioned before scope can be nested and bar still has access to a and the bar function is still available (in the form of myFunc) so as long as the code has access to the bar function it can still remember the 'a' variable. This is the magic of closure.
 
@@ -66,7 +103,23 @@ Now this code basically does the exact same thing but with closure. When the foo
 
 Well, The simple answer is, you already are using closures. Even if you are relatively new to JavaScript there's a very good chance if you look at your code again you'll find closures. Let me explain, whenever you pass a functions that access their own scope as an argument your're using clousre.
 
-`button.addEventListener("click",function(e){ e.preventDefault()// this works because of closure e can be accessed when it finally runs } ) function alertUser(name){ aler("Welcome " + name + " ,you are logged in."); // this works because of closure name can be accessed when it finally runs } singUp(callback){ // do something callback(); } singUp(alertUser(name);`
+```javascript
+
+//this works because of closure e can be accessed when it finally runs
+button.addEventListener("click",function(e){
+    e.preventDefault()//
+});
+
+function alertUser(name){
+    // this works because of closure name can be accessed when it finally runs
+     aler("Welcome " + name + " ,you are logged in.");
+     }
+     singUp(callback){
+         // do something here
+         callback();
+    }
+singUp(alertUser(name);
+```
 
 ### How I finally figured out Scopes and Closures
 
