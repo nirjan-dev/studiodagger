@@ -22,6 +22,9 @@ function Layout({ children, pageContext }: LayoutProps) {
       <ThemeProvider theme={theme}>
         <Global
           styles={css`
+            :root {
+              line-height: 1.8;
+            }
             * {
               margin: 0;
               padding: 0;
@@ -55,6 +58,7 @@ function Layout({ children, pageContext }: LayoutProps) {
           `}
         />
         <SEO title={pageContext.frontmatter.title} />
+
         <Header />
         <main style={{ minHeight: '100vh' }}>{children}</main>
         <Footer />

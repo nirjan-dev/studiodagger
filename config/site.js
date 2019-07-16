@@ -3,7 +3,7 @@ module.exports = {
   title: 'Studio Dagger | Web Developer and Designer', // Site Title
   titleAlt: 'Studio Dagger | Web Developer and Designer', // Title for JSONLD
   description:
-    'A Gatsby V2 Starter Template Built with a Step By Step GuiFull Stack JavaScript Developer and Designer making beautiful,optimized and user friendly accessible websites with HTML, CSS, JS, React.js, Node.js, Next.js, Nest.js, Gatsby.js',
+    'Full Stack JavaScript Developer and Designer making beautiful,optimized and user friendly accessible websites with HTML, CSS, JS, React.js, Node.js, Next.js, Nest.js, Gatsby.js',
   url: 'https://www.studiodagger.com', // Site domain without trailing slash
   siteUrl: 'https://www.studiodagger.com/', // url + pathPrefix
   siteLanguage: 'en', // Language Tag on <html> element

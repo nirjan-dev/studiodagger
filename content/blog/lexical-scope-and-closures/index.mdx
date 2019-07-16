@@ -1,19 +1,23 @@
 ---
 title: Understanding Lexical Scope and Closures
 slug: lexical-scope-and-closures
-date: 2019-06-14
-publish: false
+date: 2019-06-16
+publish: true
 ---
 
 ### Do I really need to understand these things?
 
-Can't I just memorize some stuff about scopes and closures for job interviews, Will I really need them? Nope and Yes. Read till the end and it may surprise you how much JavaScript uses closures.
+Can't I just memorize some stuff about scopes and closures for job interviews and will I even use closures in my code? Nope, scopes and closures are not just something you memorize for job interviews and Yes, you're 100% gonna use closures. Read till the end of this article and it may surprise you how much of JavaScript code uses closures.
 
-### How Scopes works in JavaScript
+### How Scope works in JavaScript
 
-_Scope consists of a series of bubbles that each act as a container or bucket in which identifiers are declared , these bubbles nest inside each other and this nesting is defined at author time._ - Kyle Simpson
+> Scope consists of a series of bubbles that each act as a container or bucket in which identifiers are declared , these bubbles nest inside each other and this nesting is defined at author time.
+>
+> [Kyle Simpson](https://twitter.com/getify) (Author of YDKJS series)
 
-Scope is just the set of rules that govern how the JavaScript engine can look up a variable and figure out it's value. JavaScript had only function scope (with a few exceptions) until es6 which meant that whenever a new function was declared a new scope was created.
+![scopes in JavaScript](./scopes.png)
+
+Scope is just the set of rules that govern how the JavaScript engine can look up a variable and figure out it's value. JavaScript had only function scope (with a few exceptions) until ES6 which meant that whenever a new function was declared a new scope was created.
 
 ```javascript
 //global scope
@@ -21,25 +25,29 @@ var i = 666;
 console.log(i); // 666
 
 function foo() {
+  // scope of foo
   var i = 777;
-  console.log(i);
+  console.log(i); // 777
 }
 
-foo(); // scope of foo
+foo();
 ```
 
-// note: you might have heard the term lexical scope which is the scope that is defined during a step in the compilation process called lexing. It basically means the scope that is defined when you are writing the code i.e declaring functions.
+_**note:** you might have heard the term lexical scope which is the scope that is defined during a step in the compilation process called lexing. It basically means that scope is defined when you are writing the code (declaring functions), instead of when it is actually executed during runtime._
 
 ### Scopes in ES6
 
-ES6 introduced two different ways to declare variables using let and const which can used to for block scoping. In other words, now whenever you use let or const to declare variables they are scoped to the block (any code surrounded by a pair of curly brackets).
+ES6 introduced two different ways to declare variables using let and const which can be used for block scoping. In other words, whenever you use let or const to declare variables they are scoped to the block ( any code surrounded by a pair of curly brackets {} ).
 
 ```javascript
 //global scope
 var i = 666;
 console.log(i); // 666
 
-if (true) {
+{
+  // new block scope
+  // you'll probably see these types of blocks used with
+  // if,else,for,while,etc rather that used like this
   let i = 777;
   console.log(i); // 777
 }
@@ -47,84 +55,99 @@ if (true) {
 
 ### Scopes are nested
 
-Another important thing you need to know before we dive into closures is that scopes are nested. The inner scope has access to the outer enclosing scope but the outer scope can't access the inner scope.
+Another important thing you need to know before we dive into closures is that scopes are nested. The inner scope has access to the outer enclosing scope but the outer scope can't access the variables declared in the inner scope.
 
 ```javascript
 function foo() {
   let i = 777;
   console.log(i); // 777
-  console.log(b); // Refference Error
+  console.log(b); // Refference Error (outer scope can't access variables in inner scope)
 
-  function barr() {
-    console.log(i); // 777
-    console.log(c); // Refference Error
+  function bar() {
+    console.log(i); // 777 (inner scope can access the enclosing outer scope)
+    console.log(c); // Refference Error (can't access inner scope)
     let b = 'hello';
     {
-      console.log(b);
+      console.log(b); // can access outer scope
       // hello
       let c = 'bye';
     }
   }
+
+  bar();
 }
+foo();
 ```
 
 ### What are closures
 
-_Closure is when a function can remember and access it's scope even when it's called outside it's scope_
-
-````javascript
-function foo(){
-    let a = 666;
-    function bar(){
-        console.log(a); // 666
-    }
-    bar();
-}
-foo();```
-
-This is a pretty simple function which just showcases the nesting of scope. when bar is called it has access to the variable 'a' so it can successfully console the value. Now, take a look at the next example which does the same thing but uses closure.
+Closure is when a function can remember and access it's scope even when it's called outside it's scope.
 
 ```javascript
 function foo() {
-    let a =666;
-    function bar(){
-        console.log(a);
-    }
-    return bar;
+  let a = 666;
+  function bar() {
+    console.log(a); // 666
+  }
+  bar();
 }
-let myFunc = foo() // now myFunc has the reference to the bar function inside foo.
+foo();
+```
 
-myFunc() // 666;
-````
+This is a pretty simple function which just showcases the nesting of scope as we've seen before. When bar is called it has access to the variable 'a' so it can successfully log the value. Now, take a look at the next example which does the same thing but uses closure.
 
-Now this code basically does the exact same thing but with closure. When the foo function is called the 'a' variable is declared so You might expect the 'a' variable to not be available after the call since it is inside the scope of foo but as I mentioned before scope can be nested and bar still has access to a and the bar function is still available (in the form of myFunc) so as long as the code has access to the bar function it can still remember the 'a' variable. This is the magic of closure.
+```javascript
+function foo() {
+  let a = 666;
+  function bar() {
+    console.log(a);
+  }
+  return bar;
+}
+let myFunc = foo(); // now myFunc is just a reference to the bar function inside foo.
+
+myFunc(); // 666;
+```
+
+Now this code basically does the exact same thing but with closure. When the foo function is called the 'a' variable is declared so You might expect the 'a' variable to not be available after exiting the foo function during execution since, it is inside the scope of foo but as I mentioned before scope can be nested and bar still has access to the a variable and the bar function can still be called (in the form of myFunc) so as long as the code has access to the bar function it can still remember the 'a' variable. This is the magic of closure.
 
 ### Ok, Now What? How can I use Closures?
 
-Well, The simple answer is, you already are using closures. Even if you are relatively new to JavaScript there's a very good chance if you look at your code again you'll find closures. Let me explain, whenever you pass a functions that access their own scope as an argument your're using clousre.
+Well, The simple answer is, you are probably already using closures. Even if you are relatively new to JavaScript, there's a very good chance if you look at your code again you'll find some closures. Let me explain, whenever you pass a function (that has access to it's own scope) as an argument your're using closures. In the case of event handlers, Ajax requests, web workers or any other asynchronous (or synchronous) tasks, when you pass in a callback function you're probably using closures.
 
 ```javascript
+function greet(message) {
+  setTimeout(() => {
+    // this annonymous function will run 3 seconds after calling the greet function
+    // but, it still has access to the message variable because of closure
+    console.log(message);
+  }, 3000);
+}
 
-//this works because of closure e can be accessed when it finally runs
-button.addEventListener("click",function(e){
-    e.preventDefault()//
-});
+greet('hello john');
 
-function alertUser(name){
-    // this works because of closure name can be accessed when it finally runs
-     aler("Welcome " + name + " ,you are logged in.");
-     }
-     singUp(callback){
-         // do something here
-         callback();
-    }
-singUp(alertUser(name);
+// you can use closures to create private variables inside functions that can't be accessed
+// outside of the function
+
+let updateClickCount = (function() {
+  let counter = 0; // this variable can only be changed by calling the updateClickCount
+  return function() {
+    ++counter;
+    console.log(counter);
+  };
+})(); // self invoking function runs once and sets counter to 0;
+
+// The counter is protected by the scope of the anonymous function, and can only be changed using the add function!
+updateClickCount(); // 1;
+updateClickCount(); // 2;
 ```
+
+_**note:** JavaScript modules are also created in a similar way using closures, [read more about the module pattern using closures](https://www.joezimjs.com/javascript/javascript-closures-and-the-module-pattern/)_
 
 ### How I finally figured out Scopes and Closures
 
-I have recently been reading the [You don't know JS](https://linkto/YDKJS) series by [Kyle Simpson](https://www.twitter.com/@getify) which I highly reccommend to any JS developer who wants to really understand the ins and outs of the language. If you are a beginner then you might want to start of with some more begginer friendly books as this series of books is more of an in depth guide that might be overwhelming to beginners.
+I have recently been reading the [You don't know JS](https://github.com/getify/You-Dont-Know-JS) series by [Kyle Simpson](https://www.twitter.com/@getify) which I highly reccommend to any JS developer who wants to really understand the ins and outs of the language. If you are a beginner then you might want to start of with some more begginer friendly books as this series of books is more of an in depth guide that might be overwhelming to beginners.
 
-I have been doing frontend javascript for a year (vue and react) and I recently switched to full stack with node.js so I really wanted to get a better understanding of the language, Hence I started reading [YDKJS](https://linkto/YDKJS) and I was not disapointed at all. These books is really like the bible of JavaScript. I have only just finished the second book and I already have learn't so much.
+I have been doing frontend javascript for a year (vue and react) and I recently switched to full stack with node.js so I really wanted to get a better understanding of the language, Hence I started reading [YDKJS](https://github.com/getify/You-Dont-Know-JS) and I was not disapointed at all. These books are really like the bible of JavaScript.
 
-Now, enough of the long boring intro, now to get on with it. The second book of the [YDKJS](https://linkto/YDKJS) series is called Scopes and Closures and I admit that I never really had a good enough understanding of how they really worked in JavaScript unitl I read this book.
+By the way, this is my first ever published post so I appreciate any constructive criticism about my writing as I want to get better at this. Thanks for reading.
