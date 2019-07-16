@@ -26,6 +26,16 @@ function Layout({ children, pageContext }: LayoutProps) {
               margin: 0;
               padding: 0;
             }
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            p,
+            li {
+              max-width: 60ch;
+            }
             a {
               box-shadow: none;
               transition: color 200ms cubic-bezier(0.39, 0.58, 0.57, 1);
