@@ -22,7 +22,7 @@ const IntroBanner = styled.div`
   }
 
   @media (max-width: 480px) {
-    padding: 0rem 0.5rem 4rem;
+    padding: 0rem 1rem 4rem;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   }
 `;

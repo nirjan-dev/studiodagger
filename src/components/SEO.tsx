@@ -6,7 +6,8 @@ interface SEOProps {
   title: undefined | string;
   description: undefined | string;
   pathname: undefined | string;
-  article: false;
+  article: boolean;
+  image: undefined | string;
 }
 
 const defaultProps = {
@@ -14,9 +15,10 @@ const defaultProps = {
   description: undefined,
   pathname: undefined,
   article: false,
+  image: undefined,
 };
 
-function SEO({ title, description, pathname, article }: SEOProps) {
+function SEO({ title, description, pathname, article, image }: SEOProps) {
   const result = useStaticQuery(graphql`
     {
       site {
@@ -38,7 +40,8 @@ function SEO({ title, description, pathname, article }: SEOProps) {
 
   description = description || result.site.siteMetadata.description;
 
-  const image = `${result.site.siteMetadata.url}${result.site.siteMetadata.image}`;
+  const ShowImage = `${result.site.siteMetadata.url}${image ||
+    result.site.siteMetadata.image}`;
 
   const url = `${result.site.siteMetadata.url}${pathname || `/`}`;
 
@@ -56,7 +59,7 @@ function SEO({ title, description, pathname, article }: SEOProps) {
       <Helmet title={title} titleTemplate={titleTemplate}>
         <html lang={siteLanguage} />
         <meta name="description" content={description} />
-        <meta name="image" content={image} />
+        <meta name="image" content={ShowImage} />
         <meta name="apple-mobile-web-app-title" content={shortName} />
         <meta name="application-name" content={shortName} />
 

@@ -8,6 +8,7 @@ const StyledSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 1.8rem;
   background: ${props => props.theme.colors.primaryGradient};
   .banner-title {
     color: ${props => props.theme.colors.light};
@@ -16,6 +17,13 @@ const StyledSection = styled.section`
   .subtitle {
     color: ${props => props.theme.colors.light};
     margin-top: 0.8rem;
+  }
+  @media (max-width: 600px) {
+    padding: 3rem 1rem;
+  }
+
+  @media (max-width: 360px) {
+    padding: 3rem 0.5rem;
   }
 `;
 interface BannerProps {

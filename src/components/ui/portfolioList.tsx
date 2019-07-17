@@ -6,6 +6,7 @@ import styled from '@emotion/styled';
 
 const PortfolioGrid = styled.ul`
   list-style-type: none;
+  margin: 0;
   margin-top: 5rem;
   display: grid;
   grid-template-columns: 1fr 1fr;

@@ -1,35 +1,63 @@
 import React from 'react';
-import Layout from './layout';
 import Container from './ui/container';
 import Banner from './ui/banner';
+import { MDXRenderer } from 'gatsby-mdx';
+import { graphql } from 'gatsby';
+import MasterLayout from './master';
+import SEO from './SEO';
+import Img, { FluidObject } from 'gatsby-image';
 
-interface LayoutProps {
-  children: React.ReactNode;
-  pageContext: {
-    frontmatter: {
-      title: string;
-      date: string;
-      slug: string;
+interface PostProps {
+  data: {
+    mdx: {
+      frontmatter: {
+        title: string;
+        date: string;
+        slug: string;
+        cover: {
+          childImageSharp: {
+            fluid: FluidObject;
+            original: {
+              src: string;
+            };
+          };
+        };
+      };
+      code: {
+        body: string;
+      };
+      excerpt: string;
+      timeToRead: string;
     };
   };
 }
-function Post({ children, pageContext }: LayoutProps) {
-  const date = new Date(pageContext.frontmatter.date);
-  const formatedDate = date.toDateString().slice(3, date.toDateString().length);
+function Post({ data: { mdx } }: PostProps) {
   return (
-    <Layout pageContext={pageContext}>
+    <MasterLayout>
+      <SEO
+        title={mdx.frontmatter.title}
+        description={mdx.excerpt}
+        article={true}
+        image={mdx.frontmatter.cover.childImageSharp.original.src}
+      />
       <Banner
-        title={pageContext.frontmatter.title}
-        subtitle={`Published: ${formatedDate}`}
+        title={mdx.frontmatter.title}
+        subtitle={`Published: ${mdx.frontmatter.date} • ${mdx.timeToRead} min read`}
       />
       <Container className="narrow">
-        <article>{children}</article>
+        <Img
+          fluid={mdx.frontmatter.cover.childImageSharp.fluid}
+          alt={mdx.frontmatter.title}
+        ></Img>
+        <article>
+          <MDXRenderer>{mdx.code.body}</MDXRenderer>
+        </article>
         <section>
           <ul>
             <li>
               <a
                 href={`https://mobile.twitter.com/search?q=${encodeURIComponent(
-                  'https://www.studiodagger.com/' + pageContext.frontmatter.slug
+                  'https://www.studiodagger.com/' + mdx.frontmatter.slug
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -39,7 +67,7 @@ function Post({ children, pageContext }: LayoutProps) {
             </li>
             <li>
               <a
-                href={`https://twitter.com/intent/tweet?url=https://www/studiodagger.com/${pageContext.frontmatter.slug}&text=${pageContext.frontmatter.title} by @NirjanKhadka`}
+                href={`https://twitter.com/intent/tweet?url=https://www/studiodagger.com/${mdx.frontmatter.slug}&text=${mdx.frontmatter.title} by @NirjanKhadka`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -48,7 +76,7 @@ function Post({ children, pageContext }: LayoutProps) {
             </li>
             <li>
               <a
-                href={`https://www.facebook.com/sharer/sharer.php?u=https://studiodagger.com/${pageContext.frontmatter.slug}`}
+                href={`https://www.facebook.com/sharer/sharer.php?u=https://studiodagger.com/${mdx.frontmatter.slug}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -58,8 +86,33 @@ function Post({ children, pageContext }: LayoutProps) {
           </ul>
         </section>
       </Container>
-    </Layout>
+    </MasterLayout>
   );
 }
-
+export const query = graphql`
+  query BlogPostQuery($slug: String) {
+    mdx(frontmatter: { slug: { eq: $slug } }) {
+      frontmatter {
+        title
+        date(formatString: "MMMM DD, YYYY")
+        slug
+        cover {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+            original {
+              src
+            }
+          }
+        }
+      }
+      excerpt
+      code {
+        body
+      }
+      timeToRead
+    }
+  }
+`;
 export default Post;

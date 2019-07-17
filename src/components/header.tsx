@@ -10,7 +10,7 @@ const HeaderStyled = styled.header`
   align-items: center;
   border-bottom: 2px solid ${props => props.theme.colors.primaryExtraLight};
   @media (max-width: 844px) {
-    grid-template-columns: minmax(80px, 180px) 100px;
+    grid-template-columns: minmax(80px, 180px) 90px;
     justify-content: space-between;
   }
 `;

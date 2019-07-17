@@ -26,13 +26,13 @@ const Nav = styled.nav`
     width: 100%;
     height: 0%;
     overflow: hidden;
-    transition: height 400ms 800ms cubic-bezier(0.55, 0.06, 0.68, 0.19);
+    transition: height 200ms 600ms cubic-bezier(0.55, 0.06, 0.68, 0.19);
     z-index: 1;
 
     &.is-open {
       width: 100%;
       height: 100%;
-      transition: height 800ms cubic-bezier(0.17, 0.84, 0.44, 1);
+      transition: height 600ms cubic-bezier(0.17, 0.84, 0.44, 1);
     }
   }
 `;
@@ -53,7 +53,7 @@ const Ul = styled.ul`
       width: 100%;
       text-align: center;
       padding: 2rem 1rem;
-      transition: 300ms all ease-out;
+      transition: 200ms all ease-out;
 
       opacity: 0;
       transform: translateY(-20px);
@@ -63,20 +63,16 @@ const Ul = styled.ul`
         transform: translateY(0);
       }
 
-      &:nth-child(1) {
+      &:nth-of-type(1) {
+        transition-delay: 100ms;
+      }
+
+      &:nth-of-type(2) {
         transition-delay: 200ms;
       }
 
-      &:nth-child(2) {
-        transition-delay: 400ms;
-      }
-
-      &:nth-child(3) {
-        transition-delay: 800ms;
-      }
-
-      &:nth-child(4) {
-        transition-delay: 1000ms;
+      &:nth-of-type(3) {
+        transition-delay: 300ms;
       }
     }
   }
