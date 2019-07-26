@@ -5,12 +5,12 @@ import StyledLink from './styledLink';
 
 const IntroBanner = styled.div`
   background: ${props => props.theme.colors.secondaryGradient};
-  padding: 2rem 4rem 10rem;
+  padding: 2rem 4rem 8rem;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  clip-path: polygon(0 0, 100% 0, 100% 66%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 93%);
 
   p {
     line-height: 1.8;
