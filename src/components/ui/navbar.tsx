@@ -82,7 +82,7 @@ const StyledLink = styled(Link)`
   color: ${props => props.theme.colors.dark};
   transition: all 300ms ease-out;
   border-bottom: 3px solid transparent;
-  padding: 1.9rem 1rem;
+  padding: 2rem 1rem;
   position: relative;
 
   @media (min-width: 845px) {

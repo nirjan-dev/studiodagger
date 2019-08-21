@@ -6,6 +6,7 @@ import { graphql } from 'gatsby';
 import MasterLayout from './master';
 import SEO from './SEO';
 import Img, { FluidObject } from 'gatsby-image';
+import { Disqus } from 'gatsby-plugin-disqus';
 
 interface PostProps {
   data: {
@@ -32,6 +33,11 @@ interface PostProps {
   };
 }
 function Post({ data: { mdx } }: PostProps) {
+  let disqusConfig = {
+    url: `${'https://www.studiodagger.com/' + mdx.frontmatter.slug}`,
+    identifier: mdx.frontmatter.slug,
+    title: mdx.frontmatter.title,
+  };
   return (
     <MasterLayout>
       <SEO
@@ -49,6 +55,7 @@ function Post({ data: { mdx } }: PostProps) {
           fluid={mdx.frontmatter.cover.childImageSharp.fluid}
           alt={mdx.frontmatter.title}
         ></Img>
+
         <article>
           <MDXRenderer>{mdx.code.body}</MDXRenderer>
         </article>
@@ -85,6 +92,7 @@ function Post({ data: { mdx } }: PostProps) {
             </li>
           </ul>
         </section>
+        <Disqus config={disqusConfig} />
       </Container>
     </MasterLayout>
   );

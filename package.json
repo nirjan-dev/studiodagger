@@ -17,6 +17,7 @@
     "gatsby": "^2.13.9",
     "gatsby-image": "^2.2.5",
     "gatsby-mdx": "^0.6.3",
+    "gatsby-plugin-disqus": "^1.1.2",
     "gatsby-plugin-emotion": "^4.1.0",
     "gatsby-plugin-google-gtag": "^1.1.3",
     "gatsby-plugin-manifest": "^2.2.3",

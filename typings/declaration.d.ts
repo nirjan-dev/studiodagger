@@ -5,3 +5,4 @@ declare module '*.jpeg';
 declare module '*.webp';
 declare module 'typography-theme-grand-view';
 declare module 'gatsby-mdx';
+declare module 'gatsby-plugin-disqus';
