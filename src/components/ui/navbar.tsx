@@ -1,20 +1,20 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import styled from '@emotion/styled';
+import React from "react";
+import { Link } from "gatsby";
+import styled from "@emotion/styled";
 
 const navItems = [
   {
-    name: 'Home',
-    link: '/',
+    name: "Home",
+    link: "/"
   },
   {
-    name: 'Blog',
-    link: '/blog',
+    name: "Blog",
+    link: "/blog"
   },
   {
-    name: 'Contact',
-    link: '/contact',
-  },
+    name: "Contact",
+    link: "/contact"
+  }
 ];
 
 const Nav = styled.nav`
@@ -87,28 +87,14 @@ const StyledLink = styled(Link)`
 
   @media (min-width: 845px) {
     margin-left: 1.5rem;
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 3px;
-      background-color: ${props => props.theme.colors.secondary};
-      transform: scale(0);
-      transition: 200ms transform ease-out;
-    }
     &:hover,
     &:focus,
     &:active,
     &.active {
       color: ${props => props.theme.colors.secondary};
     }
-    &:hover:after,
-    &:focus:after,
-    &:active:after,
-    &.active:after {
-      transform: scale(1);
+    &.active {
+      font-weight: ${props => props.theme.fonts.fontWeight.bold};
     }
   }
 `;
@@ -119,7 +105,7 @@ interface NavbarProps {
 
 function Navbar({ isOpen }: NavbarProps) {
   return (
-    <Nav className={isOpen ? 'is-open' : ''}>
+    <Nav className={isOpen ? "is-open" : ""}>
       <Ul>
         {navItems.map(item => (
           <li key={item.name}>

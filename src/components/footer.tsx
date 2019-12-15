@@ -1,7 +1,13 @@
-import React from 'react';
-import Container from './ui/container';
-import { useStaticQuery, graphql } from 'gatsby';
-import styled from '@emotion/styled';
+import React from "react";
+import Container from "./ui/container";
+import { useStaticQuery, graphql } from "gatsby";
+import styled from "@emotion/styled";
+import {
+  IoLogoFacebook,
+  IoLogoTwitter,
+  IoLogoInstagram,
+  IoLogoGithub
+} from "react-icons/io";
 
 const StyledFooter = styled.footer`
   background: ${props => props.theme.colors.primaryExtraLight};
@@ -32,9 +38,9 @@ const StyledFooter = styled.footer`
       display: block;
     }
     a {
-      margin: 0 1.2rem;
+      margin: 0 ${props => props.theme.spacing[2]};
       font-weight: bold;
-      font-size: 90%;
+      font-size: ${props => props.theme.fonts.fontSizes[3]};
     }
   }
 `;
@@ -57,39 +63,43 @@ function Footer() {
         <ul>
           <li>
             <a
+              title="facebook profile"
               href={`https://facebook.com/${result.site.siteMetadata.facebookUsername}`}
               rel="noopener noreferrer"
               target="_blank"
             >
-              Facebook
+              <IoLogoFacebook aria-hidden="true" />
             </a>
           </li>
 
           <li>
             <a
+              title="twitter profile"
               href={`https://twitter.com/${result.site.siteMetadata.twitterUsername}`}
               rel="noopener noreferrer"
               target="_blank"
             >
-              Twitter
+              <IoLogoTwitter aria-hidden="true" />
             </a>
           </li>
           <li>
             <a
+              title="github profile"
               href={`https://github.com/${result.site.siteMetadata.githubUsername}`}
               rel="noopener noreferrer"
               target="_blank"
             >
-              Github
+              <IoLogoGithub aria-hidden="true" />
             </a>
           </li>
           <li>
             <a
+              title="instagram profile"
               href={`https://instagram.com/${result.site.siteMetadata.instagramUsername}`}
               rel="noopener noreferrer"
               target="_blank"
             >
-              Instagram
+              <IoLogoInstagram aria-hidden="true" />
             </a>
           </li>
         </ul>

@@ -1,20 +1,21 @@
-import React from 'react';
-import Container from './container';
-import { useStaticQuery, graphql, Link } from 'gatsby';
-import Img, { FluidObject } from 'gatsby-image';
-import styled from '@emotion/styled';
+import React from "react";
+import Container from "./container";
+import { useStaticQuery, graphql, Link } from "gatsby";
+import Img, { FluidObject } from "gatsby-image";
+import styled from "@emotion/styled";
 
 const PortfolioGrid = styled.ul`
   list-style-type: none;
   margin: 0;
-  margin-top: 5rem;
+  margin-top: ${props => props.theme.spacing[5]};
+  margin-bottom: ${props => props.theme.spacing[5]};
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 5rem 3rem;
+  grid-gap: ${props => props.theme.spacing[5]};
 
   @media (max-width: 700px) {
     grid-template-columns: 1fr;
-    grid-gap: 2rem;
+    grid-gap: ${props => props.theme.spacing[4]};
     margin-top: 3rem;
   }
   .project-type {
@@ -26,7 +27,7 @@ const PortfolioGrid = styled.ul`
   .project-thumbnail {
     position: relative;
     &::before {
-      content: '';
+      content: "";
       width: 100%;
       height: 100%;
       top: 0;
@@ -107,7 +108,7 @@ function PortFolioList({ title }: PortFolioListProps) {
   return (
     <section>
       <Container>
-        <h2 style={{ textAlign: 'center' }}>{title}</h2>
+        <h2 style={{ textAlign: "center" }}>{title}</h2>
         <PortfolioGrid>
           {projects.map((project: Project) => (
             <li className="project" key={project.frontmatter.slug}>

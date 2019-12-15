@@ -1,6 +1,6 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
+import React from "react";
+import { Helmet } from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
 
 interface SEOProps {
   title: undefined | string;
@@ -15,7 +15,7 @@ const defaultProps = {
   description: undefined,
   pathname: undefined,
   article: false,
-  image: undefined,
+  image: undefined
 };
 
 function SEO({ title, description, pathname, article, image }: SEOProps) {
@@ -58,6 +58,16 @@ function SEO({ title, description, pathname, article, image }: SEOProps) {
     <>
       <Helmet title={title} titleTemplate={titleTemplate}>
         <html lang={siteLanguage} />
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com/"
+          crossOrigin="true"
+        />
+        <link
+          href="https://fonts.googleapis.com/css?family=Libre+Baskerville:700|Open+Sans&display=swap"
+          rel="stylesheet"
+        />
         <meta name="description" content={description} />
         <meta name="image" content={ShowImage} />
         <meta name="apple-mobile-web-app-title" content={shortName} />

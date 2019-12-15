@@ -1,12 +1,12 @@
-import React from 'react';
-import Container from './ui/container';
-import Banner from './ui/banner';
-import { MDXRenderer } from 'gatsby-mdx';
-import { graphql } from 'gatsby';
-import MasterLayout from './master';
-import SEO from './SEO';
-import Img, { FluidObject } from 'gatsby-image';
-import { Disqus } from 'gatsby-plugin-disqus';
+import React from "react";
+import Container from "./ui/container";
+import Banner from "./ui/banner";
+import { MDXRenderer } from "gatsby-mdx";
+import { graphql } from "gatsby";
+import MasterLayout from "./master";
+import SEO from "./SEO";
+import Img, { FluidObject } from "gatsby-image";
+import { Disqus } from "gatsby-plugin-disqus";
 
 interface PostProps {
   data: {
@@ -34,9 +34,9 @@ interface PostProps {
 }
 function Post({ data: { mdx } }: PostProps) {
   let disqusConfig = {
-    url: `${'https://www.studiodagger.com/' + mdx.frontmatter.slug}`,
+    url: `${"https://www.studiodagger.com/" + mdx.frontmatter.slug}`,
     identifier: mdx.frontmatter.slug,
-    title: mdx.frontmatter.title,
+    title: mdx.frontmatter.title
   };
   return (
     <MasterLayout>
@@ -50,7 +50,7 @@ function Post({ data: { mdx } }: PostProps) {
         title={mdx.frontmatter.title}
         subtitle={`Published: ${mdx.frontmatter.date} • ${mdx.timeToRead} min read`}
       />
-      <Container className="narrow">
+      <Container>
         <Img
           fluid={mdx.frontmatter.cover.childImageSharp.fluid}
           alt={mdx.frontmatter.title}
@@ -64,7 +64,7 @@ function Post({ data: { mdx } }: PostProps) {
             <li>
               <a
                 href={`https://mobile.twitter.com/search?q=${encodeURIComponent(
-                  'https://www.studiodagger.com/' + mdx.frontmatter.slug
+                  "https://www.studiodagger.com/" + mdx.frontmatter.slug
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"

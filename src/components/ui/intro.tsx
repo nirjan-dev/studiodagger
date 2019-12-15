@@ -1,11 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from 'react';
-import styled from '@emotion/styled';
-import StyledLink from './styledLink';
+import React from "react";
+import styled from "@emotion/styled";
+import StyledLink from "./styledLink";
 
 const IntroBanner = styled.div`
   background: ${props => props.theme.colors.secondaryGradient};
-  padding: 2rem 4rem 8rem;
+  padding-top: ${props => props.theme.spacing[4]};
+  padding-bottom: ${props => props.theme.spacing[6]};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,6 +16,7 @@ const IntroBanner = styled.div`
   p {
     line-height: 1.8;
     max-width: 60ch;
+    margin: ${props => props.theme.spacing[2]} 0;
   }
 
   @media (max-width: 660px) {
@@ -31,13 +33,16 @@ function Intro() {
     <section>
       <IntroBanner>
         <div>
-          <h2>Hello, I'm Nirjan 👋</h2>
+          <h2>Hello, I'm Nirjan</h2>
           <p>
-            As a full stack web developer, I design and create websites and web
-            applications that are accessible, user-friendly and optimized. If
-            you need someone who is passionate about using their coding skills
-            to create wonderful web experiences for your users then I'm your
-            guy.
+            I design and develop websites and applications that are blazing
+            fast, user friendly, optimized and accessible to everyone. I also
+            love sharing my knowledge about web development, UI/Ux design and
+            data visualization through my blog, twitter and instagram.
+          </p>
+          <p>
+            If you need a developer who loves design, accessibility and
+            performance then feel free to contact me.
           </p>
           <StyledLink to="/contact">Get in touch</StyledLink>
         </div>
