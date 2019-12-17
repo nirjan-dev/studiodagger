@@ -35,19 +35,6 @@ function MasterLayout({ children }: LayoutProps) {
             }
 
             h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6 {
-              font-family: ${theme.fonts.fontFamily.heading};
-              font-weight: ${theme.fonts.fontWeight.bold};
-              line-height: ${theme.fonts.lineHeight.heading};
-              letter-spacing: ${theme.fonts.letterSpacing.heading};
-              color: ${theme.colors.dark};
-            }
-
-            h1,
             .h1 {
               font-size: ${theme.fonts.fontSizes[6]};
             }
@@ -75,6 +62,31 @@ function MasterLayout({ children }: LayoutProps) {
             h6,
             .h6 {
               font-size: ${theme.fonts.fontSizes[1]};
+            }
+
+            @media (max-width: 70em) {
+              body {
+                font-size: calc(${theme.fonts.fontSizes[1]} + 0.1vw);
+              }
+            }
+
+            @media (max-width: 50em) {
+              body {
+                font-size: calc(${theme.fonts.fontSizes[1]} - 0.5vw);
+              }
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+              font-family: ${theme.fonts.fontFamily.heading};
+              font-weight: ${theme.fonts.fontWeight.bold};
+              line-height: ${theme.fonts.lineHeight.heading};
+              letter-spacing: ${theme.fonts.letterSpacing.heading};
+              color: ${theme.colors.dark};
             }
 
             h1,

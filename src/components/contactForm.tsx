@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import styled from '@emotion/styled';
-import isEmail from 'validator/lib/isEmail';
-import StyledButton from './ui/styledButton';
-import Loading from './ui/loading';
+import React, { useState } from "react";
+import styled from "@emotion/styled";
+import isEmail from "validator/lib/isEmail";
+import StyledButton from "./ui/styledButton";
+import Loading from "./ui/loading";
 
 const StatusScreen = styled.div`
   .msg {
@@ -72,9 +72,9 @@ const CustomForm = styled.form`
 `;
 
 function ContactForm() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [description, setDescription] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [description, setDescription] = useState("");
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [nameError, setNameError] = useState<string | null>(null);
@@ -82,7 +82,7 @@ function ContactForm() {
   const [descriptionError, setDescriptionError] = useState<string | null>(null);
 
   interface DataForm {
-    ['form-name']: string;
+    ["form-name"]: string;
     [name: string]: string;
     description: string;
     email: string;
@@ -90,8 +90,8 @@ function ContactForm() {
 
   const encode = function encodeForm(data: DataForm): string {
     return Object.keys(data)
-      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-      .join('&');
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
   };
 
   const validateForm = function formValidation() {
@@ -101,13 +101,13 @@ function ContactForm() {
     setDescriptionError(null);
 
     if (name.length < 5) {
-      setNameError('Name must be at  least 5 characters');
+      setNameError("Name must be at  least 5 characters");
     }
     if (description.length < 10) {
-      setDescriptionError('Description must be at least 10 characters');
+      setDescriptionError("Description must be at least 10 characters");
     }
     if (!isEmail(email)) {
-      setEmailError('Email is not valid');
+      setEmailError("Email is not valid");
     }
     if (name.length < 5 || description.length < 10 || !isEmail(email)) {
       return false;
@@ -124,15 +124,15 @@ function ContactForm() {
       return;
     }
     setSending(true);
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        'form-name': 'contact',
+        "form-name": "contact",
         name,
         email,
-        description,
-      }),
+        description
+      })
     })
       .then(() => {
         setSending(false);

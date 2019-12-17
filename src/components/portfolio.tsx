@@ -1,7 +1,7 @@
-import React from 'react';
-import Layout from './layout';
-import Container from './ui/container';
-import Banner from './ui/banner';
+import React from "react";
+import Layout from "./layout";
+import Container from "./ui/container";
+import Banner from "./ui/banner";
 
 interface LayoutProps {
   children: React.ReactNode;

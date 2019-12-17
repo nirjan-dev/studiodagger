@@ -1,6 +1,6 @@
-import React from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
-import styled from '@emotion/styled';
+import React from "react";
+import { useStaticQuery, graphql, Link } from "gatsby";
+import styled from "@emotion/styled";
 
 const PostListSection = styled.section`
   ul {

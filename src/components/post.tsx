@@ -7,6 +7,7 @@ import MasterLayout from "./master";
 import SEO from "./SEO";
 import Img, { FluidObject } from "gatsby-image";
 import { Disqus } from "gatsby-plugin-disqus";
+import styled from "@emotion/styled";
 
 interface PostProps {
   data: {
@@ -32,12 +33,33 @@ interface PostProps {
     };
   };
 }
+
+const StyledArticle = styled("article")`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  * + * {
+    margin-top: ${props => props.theme.spacing[2]};
+  }
+
+  .gatsby-resp-image-wrapper {
+    margin: ${props => props.theme.spacing[2]} auto;
+  }
+`;
+
 function Post({ data: { mdx } }: PostProps) {
   let disqusConfig = {
     url: `${"https://www.studiodagger.com/" + mdx.frontmatter.slug}`,
     identifier: mdx.frontmatter.slug,
     title: mdx.frontmatter.title
   };
+
   return (
     <MasterLayout>
       <SEO
@@ -54,11 +76,12 @@ function Post({ data: { mdx } }: PostProps) {
         <Img
           fluid={mdx.frontmatter.cover.childImageSharp.fluid}
           alt={mdx.frontmatter.title}
+          css={theme => ({ margin: `${theme.spacing[2]} auto` })}
         ></Img>
 
-        <article>
+        <StyledArticle>
           <MDXRenderer>{mdx.code.body}</MDXRenderer>
-        </article>
+        </StyledArticle>
         <section>
           <ul>
             <li>

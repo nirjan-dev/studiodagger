@@ -1,11 +1,11 @@
-const path = require('path');
+const path = require("path");
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
   if (node.internal.type === `MarkdownRemark` || node.internal.type === `Mdx`) {
     createNodeField({
       name: `collection`,
       node,
-      value: getNode(node.parent).sourceInstanceName,
+      value: getNode(node.parent).sourceInstanceName
     });
   }
 };
@@ -34,7 +34,7 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: node.frontmatter.slug,
       component: path.resolve(`./src/components/post.tsx`),
-      context: { slug: node.frontmatter.slug },
+      context: { slug: node.frontmatter.slug }
     });
   });
 };

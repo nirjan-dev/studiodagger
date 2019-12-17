@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import NavBrand from './ui/navBrand';
-import Navbar from './ui/navbar';
-import styled from '@emotion/styled';
-import NavToggle from '../components/ui/navToggle';
+import React, { useState } from "react";
+import NavBrand from "./ui/navBrand";
+import Navbar from "./ui/navbar";
+import styled from "@emotion/styled";
+import NavToggle from "../components/ui/navToggle";
 const HeaderStyled = styled.header`
   display: grid;
   grid-template-columns: minmax(80px, 180px) 1fr;

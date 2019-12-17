@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
-import { Link } from 'gatsby';
+import styled from "@emotion/styled";
+import { Link } from "gatsby";
 const StyledLink = styled(Link)`
   background: ${props => props.theme.colors.primaryGradient};
   border: none;

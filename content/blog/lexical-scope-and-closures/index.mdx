@@ -1,7 +1,7 @@
 ---
 title: Understanding Lexical Scope and Closures in 3 Minutes
 slug: lexical-scope-and-closures
-date: 2019-08-21
+date: 2019-11-21
 publish: true
 cover: ./scope-banner.png
 ---
@@ -67,11 +67,11 @@ function foo() {
   function bar() {
     console.log(i); // 777 (inner scope can access the enclosing outer scope)
     console.log(c); // Refference Error (can't access inner scope)
-    let b = 'hello';
+    let b = "hello";
     {
       console.log(b); // can access outer scope
       // hello
-      let c = 'bye';
+      let c = "bye";
     }
   }
 
@@ -125,7 +125,7 @@ function greet(message) {
   }, 3000);
 }
 
-greet('hello john');
+greet("hello john");
 
 // you can use closures to create private variables inside functions that can't be accessed
 // outside of the function

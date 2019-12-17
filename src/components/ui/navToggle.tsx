@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from '@emotion/styled';
+import React from "react";
+import styled from "@emotion/styled";
 
 const MenuIcons = styled.span`
   position: relative;
@@ -7,7 +7,7 @@ const MenuIcons = styled.span`
 
   &::after,
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     transition: all 250ms ease-out;
@@ -62,7 +62,7 @@ interface NavToggleProps {
 }
 function NavToggle({ onToggle, isOpen }: NavToggleProps) {
   return (
-    <ToggleButton className={isOpen ? 'is-open' : ''} onClick={onToggle}>
+    <ToggleButton className={isOpen ? "is-open" : ""} onClick={onToggle}>
       Menu
       <MenuIcons></MenuIcons>
     </ToggleButton>

@@ -13,11 +13,11 @@ const theme = {
   },
   fonts: {
     fontFamily: {
-      heading: `'Libre Baskerville', -apple-system, BlinkMacSystemFont, 
+      heading: `'Vollkorn', -apple-system, BlinkMacSystemFont, 
       "Segoe UI", "Roboto", "Oxygen", 
       "Ubuntu", "Cantarell", "Fira Sans", 
       "Droid Sans", "Helvetica Neue", sans-serif;`,
-      body: `'Open Sans',-apple-system, BlinkMacSystemFont, 
+      body: `'Lato',-apple-system, BlinkMacSystemFont, 
       "Segoe UI", "Roboto", "Oxygen", 
       "Ubuntu", "Cantarell", "Fira Sans", 
       "Droid Sans", "Helvetica Neue", sans-serif`

@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from '@emotion/styled';
+import React from "react";
+import styled from "@emotion/styled";
 
 const Loader = styled.div`
   position: relative;
@@ -11,7 +11,7 @@ const Loader = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     margin: auto;
-    filter: url('#goo');
+    filter: url("#goo");
     animation: rotate-move 2s ease-in-out infinite;
   }
 

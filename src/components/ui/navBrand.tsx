@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import styled from '@emotion/styled';
-import logo from '../../images/logo/logo.png';
-import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import React from "react";
+import { Link } from "gatsby";
+import styled from "@emotion/styled";
+import logo from "../../images/logo/logo.png";
+import { useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
 
 const StyledImage = styled(Img)`
   margin: 0.8rem;
