@@ -6,17 +6,15 @@ import styled from "@emotion/styled";
 
 const PortfolioGrid = styled.ul`
   list-style-type: none;
-  margin: 0;
-  margin-top: ${props => props.theme.spacing[5]};
-  margin-bottom: ${props => props.theme.spacing[5]};
+  margin-top: ${props => props.theme.spacing[3]};
+  margin-bottom: ${props => props.theme.spacing[2]};
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: ${props => props.theme.spacing[5]};
+  grid-gap: ${props => props.theme.spacing[4]};
 
   @media (max-width: 700px) {
     grid-template-columns: 1fr;
     grid-gap: ${props => props.theme.spacing[4]};
-    margin-top: 3rem;
   }
   .project-type {
     color: ${props => props.theme.colors.darkLight};
@@ -38,7 +36,7 @@ const PortfolioGrid = styled.ul`
 
       background: ${props => props.theme.colors.primaryGradient};
       opacity: 0;
-      transition: 400ms cubic-bezier(0.39, 0.58, 0.57, 1);
+      transition: 250ms cubic-bezier(0.39, 0.58, 0.57, 1);
     }
   }
   .project-link {
@@ -106,7 +104,7 @@ function PortFolioList({ title }: PortFolioListProps) {
   `);
   const projects = data.allMdx.nodes;
   return (
-    <section>
+    <section css={theme => ({ margin: `${theme.spacing[2]} 0` })}>
       <Container>
         <h2 style={{ textAlign: "center" }}>{title}</h2>
         <PortfolioGrid>

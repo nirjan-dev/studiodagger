@@ -1,11 +1,11 @@
 import styled from "@emotion/styled";
 
 const Container = styled.div`
-  max-width: 1200px;
+  max-width: 95%;
   margin: 0 auto;
   padding: 0 1rem;
   &.narrow {
-    max-width: 800px;
+    max-width: 80%;
   }
 `;
 

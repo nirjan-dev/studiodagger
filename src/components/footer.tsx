@@ -34,9 +34,6 @@ const StyledFooter = styled.footer`
     list-style: none;
     display: flex;
     margin: 0;
-    @media (max-width: 630px) {
-      display: block;
-    }
     a {
       margin: 0 ${props => props.theme.spacing[2]};
       font-weight: bold;

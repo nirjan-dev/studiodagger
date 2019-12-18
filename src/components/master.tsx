@@ -16,9 +16,6 @@ function MasterLayout({ children }: LayoutProps) {
       <ThemeProvider theme={theme}>
         <Global
           styles={css`
-            :root {
-              line-height: 1.8;
-            }
             *,
             :before,
             :after {
@@ -27,8 +24,11 @@ function MasterLayout({ children }: LayoutProps) {
               box-sizing: border-box;
             }
 
-            body {
+            html {
               font-size: calc(${theme.fonts.fontSizes[1]} + 0.5vw);
+            }
+
+            body {
               font-family: ${theme.fonts.fontFamily.body};
               line-height: ${theme.fonts.lineHeight.body};
               color: ${theme.colors.darkLight};
@@ -64,16 +64,8 @@ function MasterLayout({ children }: LayoutProps) {
               font-size: ${theme.fonts.fontSizes[1]};
             }
 
-            @media (max-width: 70em) {
-              body {
-                font-size: calc(${theme.fonts.fontSizes[1]} + 0.1vw);
-              }
-            }
-
-            @media (max-width: 50em) {
-              body {
-                font-size: calc(${theme.fonts.fontSizes[1]} - 0.5vw);
-              }
+            small {
+              font-size: 95%;
             }
 
             h1,
@@ -89,15 +81,8 @@ function MasterLayout({ children }: LayoutProps) {
               color: ${theme.colors.dark};
             }
 
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6,
-            p,
-            li {
-              max-width: 70ch;
+            p {
+              max-width: 66ch;
             }
 
             a {
@@ -116,6 +101,38 @@ function MasterLayout({ children }: LayoutProps) {
               opacity: 0;
               font-size: 0.1px;
               position: absolute;
+            }
+
+            @media (max-width: 90em) {
+              html {
+                font-size: calc(${theme.fonts.fontSizes[1]} + 0.2vw);
+              }
+            }
+
+            @media (max-width: 50em) {
+              html {
+                font-size: calc(${theme.fonts.fontSizes[1]} - 0.1vw);
+              }
+
+              h1,
+              .h1 {
+                font-size: ${theme.fonts.fontSizes[5]};
+              }
+
+              h2,
+              .h2 {
+                font-size: ${theme.fonts.fontSizes[4]};
+              }
+
+              h3,
+              .h3 {
+                font-size: ${theme.fonts.fontSizes[3]};
+              }
+
+              h4,
+              .h4 {
+                font-size: ${theme.fonts.fontSizes[2]};
+              }
             }
           `}
         />

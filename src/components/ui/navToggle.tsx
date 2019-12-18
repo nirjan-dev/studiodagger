@@ -50,7 +50,7 @@ const ToggleButton = styled.button`
   border: none;
   justify-content: space-between;
   cursor: pointer;
-
+  color: ${props => props.theme.colors.dark};
   @media (min-width: 845px) {
     display: none;
   }

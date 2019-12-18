@@ -3,6 +3,8 @@ import { useStaticQuery, graphql, Link } from "gatsby";
 import styled from "@emotion/styled";
 
 const PostListSection = styled.section`
+  max-width: 90ch;
+  margin: 0 auto;
   ul {
     list-style-type: none;
   }
