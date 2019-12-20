@@ -4,7 +4,7 @@ module.exports = {
     ...config,
     titleTemplate: "%s | Studio Dagger",
     twitterUsername: "@NirjanKhadka",
-    facebookUsername: "NirjanKhadka13",
+    facebookUsername: "nk13.dev",
     instagramUsername: "nk13.dev",
     githubUsername: "NK-WebDev"
   },

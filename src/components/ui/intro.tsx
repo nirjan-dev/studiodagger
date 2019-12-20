@@ -2,7 +2,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import StyledLink from "./styledLink";
-import { Link } from "gatsby";
+import { Link, useStaticQuery, graphql } from "gatsby";
 import Container from "./container";
 
 const IntroBanner = styled.div`
@@ -28,6 +28,16 @@ const IntroBanner = styled.div`
   }
 `;
 function Intro() {
+  const result = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          twitterUsername
+          instagramUsername
+        }
+      }
+    }
+  `);
   return (
     <section>
       <IntroBanner>
@@ -39,11 +49,19 @@ function Intro() {
               fast, user friendly, optimized and accessible to everyone. I also
               love sharing my knowledge about web development and UI/UX design
               through my <Link to="/blog">blog</Link>,{" "}
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a
+                href={`https://twitter.com/${result.site.siteMetadata.twitterUsername}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 twitter
               </a>{" "}
               and{" "}
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a
+                href={`https://instagram.com/${result.site.siteMetadata.instagramUsername}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 instagram
               </a>
             </p>
