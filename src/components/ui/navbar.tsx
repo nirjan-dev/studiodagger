@@ -19,7 +19,7 @@ const navItems = [
 
 const Nav = styled.nav`
   @media (max-width: 844px) {
-    background-color: ${props => props.theme.colors.primaryLight};
+    background-color: ${props => props.theme.colors.light};
     position: fixed;
     top: 0;
     left: 0;

@@ -7,6 +7,14 @@ const Container = styled.div`
   &.narrow {
     max-width: 80%;
   }
+
+  @media (min-width: 80em) {
+    max-width: 1600px;
+
+    &.narrow {
+      max-width: 960px;
+    }
+  }
 `;
 
 export default Container;

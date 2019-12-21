@@ -81,7 +81,12 @@ function MasterLayout({ children }: LayoutProps) {
               color: ${theme.colors.dark};
             }
 
-            p {
+            p,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5 {
               max-width: 66ch;
             }
 

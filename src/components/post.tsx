@@ -45,7 +45,7 @@ const StyledArticle = styled("article")`
   }
 
   * + * {
-    margin-top: ${props => props.theme.spacing[2]};
+    margin-top: ${props => props.theme.spacing[1]};
   }
 
   .gatsby-resp-image-wrapper {
@@ -72,7 +72,7 @@ function Post({ data: { mdx } }: PostProps) {
         title={mdx.frontmatter.title}
         subtitle={`Published: ${mdx.frontmatter.date} • ${mdx.timeToRead} min read`}
       />
-      <Container>
+      <Container className="narrow">
         <Img
           fluid={mdx.frontmatter.cover.childImageSharp.fluid}
           alt={mdx.frontmatter.title}
