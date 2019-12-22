@@ -68,6 +68,11 @@ function MasterLayout({ children }: LayoutProps) {
               font-size: 95%;
             }
 
+            ul,
+            ol {
+              padding-left: ${theme.spacing[2]};
+            }
+
             h1,
             h2,
             h3,

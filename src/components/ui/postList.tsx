@@ -7,6 +7,7 @@ const PostListSection = styled.section`
   margin: 0 auto;
   ul {
     list-style-type: none;
+    padding: 0;
   }
   li {
     margin: 2rem 0;

@@ -11,7 +11,7 @@ const PortfolioGrid = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: ${props => props.theme.spacing[4]};
-
+  padding: 0;
   @media (max-width: 700px) {
     grid-template-columns: 1fr;
     grid-gap: ${props => props.theme.spacing[4]};
