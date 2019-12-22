@@ -38,6 +38,7 @@ const Nav = styled.nav`
 `;
 
 const Ul = styled.ul`
+  padding: 0;
   display: flex;
   list-style-type: none;
   justify-content: flex-end;

@@ -128,7 +128,10 @@ function MasterLayout({ children }: LayoutProps) {
               html {
                 font-size: calc(${theme.fonts.fontSizes[1]} - 0.1vw);
               }
-
+              .lead {
+                font-weight: bold;
+                font-size: ${theme.fonts.fontSizes[1]};
+              }
               h1,
               .h1 {
                 font-size: ${theme.fonts.fontSizes[5]};
