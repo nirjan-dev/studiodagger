@@ -16,6 +16,7 @@ interface PostProps {
         title: string;
         date: string;
         slug: string;
+        excerpt: string;
         cover: {
           childImageSharp: {
             fluid: FluidObject;
@@ -73,6 +74,7 @@ function Post({ data: { mdx } }: PostProps) {
         subtitle={`Published: ${mdx.frontmatter.date} • ${mdx.timeToRead} min read`}
       />
       <Container className="narrow">
+        <p className="lead">{mdx.frontmatter.excerpt}</p>
         <Img
           fluid={mdx.frontmatter.cover.childImageSharp.fluid}
           alt={mdx.frontmatter.title}
@@ -127,6 +129,7 @@ export const query = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         slug
+        excerpt
         cover {
           childImageSharp {
             fluid {
@@ -138,7 +141,7 @@ export const query = graphql`
           }
         }
       }
-      excerpt
+
       code {
         body
       }

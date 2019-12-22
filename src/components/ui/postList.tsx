@@ -13,7 +13,11 @@ const PostListSection = styled.section`
   }
   .title {
     color: inherit;
-    margin-bottom: 1rem;
+  }
+  .meta {
+    color: ${props => props.theme.colors.grey};
+    margin-bottom: ${props => props.theme.spacing[0]};
+    display: block;
   }
 `;
 function PostList() {
@@ -31,8 +35,8 @@ function PostList() {
               title
               slug
               date(formatString: "MMMM D,YYYY")
+              excerpt
             }
-            excerpt
             timeToRead
           }
         }
@@ -45,6 +49,7 @@ function PostList() {
         title: string;
         slug: string;
         date: string;
+        excerpt: string;
       };
       excerpt: string;
       timeToRead: string;
@@ -64,7 +69,7 @@ function PostList() {
               </small>
             </p>
 
-            <p className="excerpt">{node.excerpt}</p>
+            <p className="excerpt">{node.frontmatter.excerpt}</p>
           </li>
         ))}
       </ul>

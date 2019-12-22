@@ -90,6 +90,11 @@ function MasterLayout({ children }: LayoutProps) {
               max-width: 66ch;
             }
 
+            .lead {
+              font-weight: bold;
+              font-size: ${theme.fonts.fontSizes[2]};
+            }
+
             a {
               box-shadow: none;
               transition: color 200ms cubic-bezier(0.39, 0.58, 0.57, 1);
