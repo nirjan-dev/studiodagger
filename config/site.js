@@ -7,7 +7,7 @@ module.exports = {
   url: "https://www.studiodagger.com", // Site domain without trailing slash
   siteUrl: "https://www.studiodagger.com/", // url + pathPrefix
   siteLanguage: "en", // Language Tag on <html> element
-  logo: "/images/logo/logo.png",
+  logo: "/images/logo.svg",
   image: "/images/banner.png",
   favicon: "static/images/favicon.png", // Manifest favicon generation
   shortName: "StudioDagger", // Shortname for manifest, must be shorter than 12 characters

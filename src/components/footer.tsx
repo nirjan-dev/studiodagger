@@ -35,9 +35,9 @@ const StyledFooter = styled.footer`
     display: flex;
     margin: 0;
     a {
-      margin: 0 ${props => props.theme.spacing[2]};
+      margin: 0 ${props => props.theme.spacing[1]};
       font-weight: bold;
-      font-size: ${props => props.theme.fonts.fontSizes[3]};
+      font-size: ${props => props.theme.fonts.fontSizes[2]};
     }
   }
 `;
