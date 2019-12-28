@@ -47,8 +47,8 @@ function Intro() {
             <p>
               I design and develop websites and applications that are blazing
               fast, user friendly, optimized and accessible to everyone. I also
-              love sharing my knowledge about web development and UI/UX design
-              through my <Link to="/blog">blog</Link>,{" "}
+              love sharing what I've learnt about web development and UI/UX
+              design through my <Link to="/blog">blog</Link>,{" "}
               <a
                 href={`https://twitter.com/${result.site.siteMetadata.twitterUsername}`}
                 target="_blank"
