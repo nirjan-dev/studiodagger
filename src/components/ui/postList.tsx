@@ -62,7 +62,7 @@ function PostList() {
         {data.allMdx.edges.map(({ node }: Edge) => (
           <li key={node.frontmatter.slug}>
             <Link to={`/${node.frontmatter.slug}`}>
-              <h3 className="title">{node.frontmatter.title}</h3>
+              <h3 className="title h4">{node.frontmatter.title}</h3>
             </Link>
             <p>
               <small className="meta">

@@ -128,6 +128,10 @@ function MasterLayout({ children }: LayoutProps) {
               html {
                 font-size: calc(${theme.fonts.fontSizes[1]} - 0.1vw);
               }
+
+              body {
+                line-height: ${theme.fonts.lineHeight.bodyMobile};
+              }
               .lead {
                 font-weight: bold;
                 font-size: ${theme.fonts.fontSizes[1]};
@@ -145,11 +149,6 @@ function MasterLayout({ children }: LayoutProps) {
               h3,
               .h3 {
                 font-size: ${theme.fonts.fontSizes[3]};
-              }
-
-              h4,
-              .h4 {
-                font-size: ${theme.fonts.fontSizes[2]};
               }
             }
           `}

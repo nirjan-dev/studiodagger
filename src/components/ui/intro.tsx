@@ -20,6 +20,7 @@ const IntroBanner = styled.div`
   }
 
   p {
+    max-width: 60ch;
     margin: ${props => props.theme.spacing[1]} 0;
   }
 

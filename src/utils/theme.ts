@@ -29,6 +29,7 @@ const theme = {
     },
     lineHeight: {
       body: 1.7,
+      bodyMobile: 1.4,
       heading: 1.2
     },
     letterSpacing: {
