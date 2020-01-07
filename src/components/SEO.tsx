@@ -65,7 +65,7 @@ function SEO({ title, description, pathname, article, image }: SEOProps) {
           crossOrigin="true"
         />
         <link
-          href="https://fonts.googleapis.com/css?family=Lato|Vollkorn:700&display=swap"
+          href="https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans:800&display=swap"
           rel="stylesheet"
         />
         <meta name="description" content={description} />

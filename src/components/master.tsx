@@ -97,7 +97,6 @@ function MasterLayout({ children }: LayoutProps) {
 
             .lead {
               font-weight: bold;
-              font-size: ${theme.fonts.fontSizes[2]};
             }
 
             a {

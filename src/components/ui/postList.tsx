@@ -13,7 +13,13 @@ const PostListSection = styled.section`
     margin: 2rem 0;
   }
   .title {
-    color: inherit;
+    max-width: 25ch;
+    transition: color 200ms ease-in;
+    &:hover,
+    &:active,
+    &:focus {
+      color: ${props => props.theme.colors.secondary};
+    }
   }
   .meta {
     color: ${props => props.theme.colors.grey};

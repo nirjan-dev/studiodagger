@@ -5,7 +5,7 @@ const theme = {
     primaryLight: "#b39cd0",
     primaryExtraLight: "#fbeaff",
     grey: "#666",
-    dark: "#111",
+    dark: "#1e0b4f",
     light: "#fefefe",
     darkLight: "#444",
     primaryGradient: "linear-gradient(to right, #8e2de2, #4a00e0)",
@@ -13,11 +13,11 @@ const theme = {
   },
   fonts: {
     fontFamily: {
-      heading: `'Vollkorn', -apple-system, BlinkMacSystemFont, 
+      heading: `'Merriweather Sans', -apple-system, BlinkMacSystemFont, 
       "Segoe UI", "Roboto", "Oxygen", 
       "Ubuntu", "Cantarell", "Fira Sans", 
       "Droid Sans", "Helvetica Neue", sans-serif;`,
-      body: `'Lato',-apple-system, BlinkMacSystemFont, 
+      body: `'Merriweather',-apple-system, BlinkMacSystemFont, 
       "Segoe UI", "Roboto", "Oxygen", 
       "Ubuntu", "Cantarell", "Fira Sans", 
       "Droid Sans", "Helvetica Neue", sans-serif`
@@ -37,14 +37,14 @@ const theme = {
       heading: "-0.1rem"
     },
     fontSizes: [
-      "0.667rem",
+      "0.7rem",
       "1rem",
-      "1.5rem",
-      "2.5rem",
-      "3.375rem",
-      "5.063rem",
-      "7.594rem",
-      "11.391rem"
+      "1.4rem",
+      "1.9rem",
+      "2.8rem",
+      "3.9rem",
+      "5.6rem",
+      "7.9rem"
     ]
   },
   spacing: [
