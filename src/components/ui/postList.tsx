@@ -35,6 +35,7 @@ function PostList() {
           frontmatter: { publish: { eq: true } }
           fields: { collection: { eq: "posts" } }
         }
+        sort: { order: DESC, fields: frontmatter___date }
       ) {
         edges {
           node {

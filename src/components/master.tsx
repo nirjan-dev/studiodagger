@@ -85,7 +85,9 @@ function MasterLayout({ children }: LayoutProps) {
               letter-spacing: ${theme.fonts.letterSpacing.heading};
               color: ${theme.colors.dark};
             }
-
+            strong {
+              color: ${theme.colors.dark};
+            }
             p,
             h1,
             h2,

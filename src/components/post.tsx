@@ -40,6 +40,9 @@ const StyledArticle = styled("article")`
   flex-direction: column;
   justify-content: flex-start;
 
+  a {
+    text-decoration: underline;
+  }
   * {
     margin-top: 0;
     margin-bottom: 0;
@@ -84,7 +87,7 @@ function Post({ data: { mdx } }: PostProps) {
         <StyledArticle>
           <MDXRenderer>{mdx.code.body}</MDXRenderer>
         </StyledArticle>
-        <section>
+        <section style={{ marginTop: "3rem" }}>
           <ul>
             <li>
               <a
