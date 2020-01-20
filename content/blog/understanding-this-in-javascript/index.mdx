@@ -164,53 +164,53 @@ In JS there are 4 different types of **this** bindings and they have their own o
    console.log(bar.a); // 4
    ```
 
-   5. **Arrow Functions**:
-      I know I promised there were only 4 different types of **this** binding and traditionally that was true until es6 when arrow functions were introduced.
+5. **Arrow Functions**:
+   I know I promised there were only 4 different types of **this** binding and traditionally that was true until es6 when arrow functions were introduced.
 
-      ```javascript
-      /**
-       *  arrow functions use the fat arrow =>
-       * instead of the function keyword.
-       */
+   ```javascript
+   /**
+    *  arrow functions use the fat arrow =>
+    * instead of the function keyword.
+    */
 
-      a => {
-        console.log(a);
-      };
-      ```
+   a => {
+     console.log(a);
+   };
+   ```
 
-      Arrow functions are not just a quicker way to write functions but they also do **this** binding a little different. They use lexical scope for **this**. If you wanna read more about lexical scope I have a [post about that too](https://www.studiodagger.com/lexical-scope-and-closures). But all you need to know about the **this** in arrow functions is that they inherit the value of **this** from thier inclosing function and I mean the function where the arrow functions are declared inside and not where they are actually called.
+   Arrow functions are not just a quicker way to write functions but they also do **this** binding a little different. They use lexical scope for **this**. If you wanna read more about lexical scope I have a [post about that too](https://www.studiodagger.com/lexical-scope-and-closures). But all you need to know about the **this** in arrow functions is that they inherit the value of **this** from thier inclosing function and I mean the function where the arrow functions are declared inside and not where they are actually called.
 
-      ```javascript
-      function foo() {
-        return () => {
-          /**
-           * here this actually refers to the
-           * this of the foo function
-           */
+   ```javascript
+   function foo() {
+     return () => {
+       /**
+        * here this actually refers to the
+        * this of the foo function
+        */
 
-          console.log(this.a);
-        };
-      }
-      const obj1 = {
-        a: 4
-      };
-      const obj2 = {
-        a: 7
-      };
-      /**
-       * sets this binding to obj1 and
-       * gets the arrow function as the return value
-       * then tries to set the this binding
-       * of the arrow function to obj2 but
-       * the arrow function's this is set
-       * to the this of foo which was bound to obj1
-       **/
-      const bar = foo.call(obj1);
-      bar.call(obj2); // 4
-      ```
+       console.log(this.a);
+     };
+   }
+   const obj1 = {
+     a: 4
+   };
+   const obj2 = {
+     a: 7
+   };
+   /**
+    * sets this binding to obj1 and
+    * gets the arrow function as the return value
+    * then tries to set the this binding
+    * of the arrow function to obj2 but
+    * the arrow function's this is set
+    * to the this of foo which was bound to obj1
+    **/
+   const bar = foo.call(obj1);
+   bar.call(obj2); // 4
+   ```
 
-      Therefore, the **this** binding of arrow function is actually done in author-time rather than run-time like the other types of **this** binding.
+   Therefore, the **this** binding of arrow function is actually done in author-time rather than run-time like the other types of **this** binding.
 
-   Here is a cheatsheet that can help you find the value of **this** in JavaScript.
+Here is a cheatsheet that can help you find the value of **this** in JavaScript.
 
 ![this cheatsheet for javascript functions](./this-cheatsheet.png)
