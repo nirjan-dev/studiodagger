@@ -7,13 +7,12 @@ import Container from "./container";
 
 const IntroBanner = styled.div`
   background: ${props => props.theme.colors.secondaryGradient};
-  padding-top: ${props => props.theme.spacing[3]};
-  padding-bottom: ${props => props.theme.spacing[5]};
+  padding: ${props => props.theme.spacing[4]} 0;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 93%);
+  // clip-path: polygon(0 0, 100% 0, 100% 80%, 0 93%);
 
   a:not(.primary-btn) {
     border-bottom: 3px solid ${props => props.theme.colors.primary};
@@ -25,7 +24,7 @@ const IntroBanner = styled.div`
   }
 
   @media (max-width: 55em) {
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    // clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   }
 `;
 function Intro() {
