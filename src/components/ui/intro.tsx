@@ -6,7 +6,6 @@ import { Link, useStaticQuery, graphql } from "gatsby";
 import Container from "./container";
 
 const IntroBanner = styled.div`
-  background: ${props => props.theme.colors.secondaryGradient};
   padding: ${props => props.theme.spacing[4]} 0;
   display: flex;
   justify-content: center;

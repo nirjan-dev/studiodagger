@@ -14,7 +14,7 @@ function Layout({ children, pageContext }: LayoutProps) {
   return (
     <MasterLayout>
       <SEO title={pageContext.frontmatter.title} />
-      <main>{children}</main>
+      <main style={{ minHeight: "100vh" }}>{children}</main>
     </MasterLayout>
   );
 }
