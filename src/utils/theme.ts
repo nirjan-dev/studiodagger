@@ -29,7 +29,7 @@ const theme = {
       black: 900
     },
     lineHeight: {
-      body: 1.7,
+      body: 1.5,
       bodyMobile: 1.4,
       heading: 1.2
     },
