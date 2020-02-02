@@ -80,7 +80,7 @@ function MasterLayout({ children }: LayoutProps) {
             h5,
             h6 {
               font-family: ${theme.fonts.fontFamily.heading};
-              font-weight: ${theme.fonts.fontWeight.bold};
+              font-weight: ${theme.fonts.fontWeight.black};
               line-height: ${theme.fonts.lineHeight.heading};
               letter-spacing: ${theme.fonts.letterSpacing.heading};
               color: ${theme.colors.dark};

@@ -13,11 +13,11 @@ const theme = {
   },
   fonts: {
     fontFamily: {
-      heading: `'Merriweather Sans', -apple-system, BlinkMacSystemFont, 
+      body: `'Merriweather Sans', -apple-system, BlinkMacSystemFont, 
       "Segoe UI", "Roboto", "Oxygen", 
       "Ubuntu", "Cantarell", "Fira Sans", 
       "Droid Sans", "Helvetica Neue", sans-serif;`,
-      body: `'Merriweather',-apple-system, BlinkMacSystemFont, 
+      heading: `'Merriweather',-apple-system, BlinkMacSystemFont, 
       "Segoe UI", "Roboto", "Oxygen", 
       "Ubuntu", "Cantarell", "Fira Sans", 
       "Droid Sans", "Helvetica Neue", sans-serif`
@@ -25,7 +25,8 @@ const theme = {
     fontWeight: {
       light: 200,
       regular: 400,
-      bold: 700
+      bold: 700,
+      black: 900
     },
     lineHeight: {
       body: 1.7,
