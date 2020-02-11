@@ -119,6 +119,16 @@ function MasterLayout({ children }: LayoutProps) {
               position: absolute;
             }
 
+            #gatsby-focus-wrapper {
+              display: flex;
+              flex-direction: column;
+              min-height: 100vh;
+
+              footer {
+                margin-top: auto;
+              }
+            }
+
             @media (max-width: 90em) {
               html {
                 font-size: calc(${theme.fonts.fontSizes[1]} + 0.2vw);
