@@ -6,7 +6,13 @@ import Img from "gatsby-image";
 
 const StyledImage = styled("img")`
   margin: 0.2rem;
-  max-height: 60px;
+  max-height: 4.5rem;
+  padding: ${props => props.theme.spacing[0]};
+
+  @media (max-width: 40em) {
+    max-height: 3rem;
+    padding: 0;
+  }
 `;
 
 function NavBrand() {

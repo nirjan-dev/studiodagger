@@ -11,6 +11,10 @@ const HeaderStyled = styled.header`
 
   @media (max-width: 40em) {
     flex-direction: column;
+
+    nav {
+      margin: ${props => props.theme.spacing[1]};
+    }
   }
 `;
 

@@ -5,6 +5,7 @@ const Container = styled.div`
   margin: 0 auto;
   padding: 0 1rem;
   &.narrow {
+    width: 100%;
     max-width: 800px;
   }
 

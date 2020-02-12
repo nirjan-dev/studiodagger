@@ -3,7 +3,7 @@ import { useStaticQuery, graphql, Link } from "gatsby";
 import styled from "@emotion/styled";
 
 const PostListSection = styled.section`
-  max-width: 90ch;
+  max-width: 60ch;
   margin: 0 auto;
   ul {
     list-style-type: none;
@@ -23,7 +23,7 @@ const PostListSection = styled.section`
   }
   .meta {
     color: ${props => props.theme.colors.grey};
-    margin-bottom: ${props => props.theme.spacing[0]};
+    margin: ${props => props.theme.spacing[0]} 0;
     display: block;
   }
 `;
