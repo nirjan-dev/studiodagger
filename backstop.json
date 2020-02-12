@@ -1,0 +1,72 @@
+{
+  "id": "studiodagger_default",
+  "viewports": [
+    {
+      "label": "phone",
+      "width": 360,
+      "height": 3000
+    },
+    {
+      "label": "tablet",
+      "width": 834,
+      "height": 3000
+    },
+    {
+      "label": "laptop",
+      "width": 1366,
+      "height": 3000
+    },
+    {
+      "label": "HD-desktop",
+      "width": 1920,
+      "height": 3000
+    }
+  ],
+  "scenarios": [
+    {
+      "label": "Studiodagger-Homepage",
+      "url": "http://localhost:8000/",
+      "delay": 6000,
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "Studiodagger-Blog",
+      "url": "http://localhost:8000/blog",
+      "delay": 6000,
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": false
+    },
+    {
+      "label": "Studiodagger-Blog-post",
+      "url": "http://localhost:8000/lexical-scope-and-closures",
+      "delay": 6000,
+      "misMatchThreshold": 0.1,
+      "readySelector": "#disqus_thread",
+      "requireSameDimensions": false
+    },
+    {
+      "label": "Studiodagger-contact",
+      "url": "http://localhost:8000/contact",
+      "delay": 6000,
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": false
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "backstop_data/engine_scripts",
+    "html_report": "backstop_data/html_report",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "report": ["browser"],
+  "engine": "puppeteer",
+  "engineOptions": {
+    "args": ["--no-sandbox"]
+  },
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": false
+}

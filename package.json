@@ -48,7 +48,8 @@
     "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
     "lint:fix": "yarn lint --fix",
     "cy:open": "cypress open",
-    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open"
+    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
+    "test:visual": "backstop test"
   },
   "devDependencies": {
     "@testing-library/cypress": "^4.0.4",
@@ -59,6 +60,7 @@
     "@types/validator": "^10.11.1",
     "@typescript-eslint/eslint-plugin": "^1.11.0",
     "@typescript-eslint/parser": "^1.11.0",
+    "backstopjs": "^4.4.2",
     "cypress": "^3.3.2",
     "eslint": "^6.0.1",
     "eslint-config-prettier": "^6.0.0",

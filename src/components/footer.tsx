@@ -3,10 +3,10 @@ import Container from "./ui/container";
 import { useStaticQuery, graphql } from "gatsby";
 import styled from "@emotion/styled";
 import {
-  IoLogoFacebook,
   IoLogoTwitter,
   IoLogoInstagram,
-  IoLogoGithub
+  IoLogoGithub,
+  IoLogoCodepen
 } from "react-icons/io";
 
 const StyledFooter = styled.footer`
@@ -48,7 +48,7 @@ function Footer() {
       site {
         siteMetadata {
           twitterUsername
-          facebookUsername
+          codepenUsername
           instagramUsername
           githubUsername
         }
@@ -61,12 +61,12 @@ function Footer() {
         <ul>
           <li>
             <a
-              title="facebook profile"
-              href={`https://facebook.com/${result.site.siteMetadata.facebookUsername}`}
+              title="codepen profile"
+              href={`https://codepen.io/${result.site.siteMetadata.codepenUsername}`}
               rel="noopener noreferrer"
               target="_blank"
             >
-              <IoLogoFacebook aria-hidden="true" />
+              <IoLogoCodepen aria-hidden="true" />
             </a>
           </li>
 

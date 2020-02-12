@@ -3,10 +3,11 @@ module.exports = {
   siteMetadata: {
     ...config,
     titleTemplate: "%s | Studio Dagger",
-    twitterUsername: "@NirjanKhadka",
-    facebookUsername: "nk13.dev",
-    instagramUsername: "nk13.dev",
-    githubUsername: "NK-WebDev"
+    twitterUsername: "@nk13_codes",
+    facebookUsername: "nk13",
+    instagramUsername: "nk13_codes",
+    githubUsername: "NK-WebDev",
+    codepenUsername: "nk13_codes"
   },
   plugins: [
     {
