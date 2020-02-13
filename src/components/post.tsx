@@ -55,11 +55,17 @@ const StyledArticle = styled("article")`
   .gatsby-resp-image-wrapper {
     margin: ${props => props.theme.spacing[2]} auto;
   }
+
+  blockquote {
+    border-left: 8px solid ${props => props.theme.colors.primary};
+    padding: ${props => props.theme.spacing[0]};
+    background: ${props => props.theme.colors.primaryExtraLight};
+  }
 `;
 
 function Post({ data: { mdx } }: PostProps) {
   let disqusConfig = {
-    url: `${"https://www.studiodagger.com/" + mdx.frontmatter.slug}`,
+    url: `${"https://www.studiodagger.com/" + mdx.frontmatter.slug} `,
     identifier: mdx.frontmatter.slug,
     title: mdx.frontmatter.title
   };
@@ -68,7 +74,7 @@ function Post({ data: { mdx } }: PostProps) {
     <MasterLayout>
       <SEO
         title={mdx.frontmatter.title}
-        description={mdx.excerpt}
+        description={mdx.frontmatter.excerpt}
         article={true}
         image={mdx.frontmatter.cover.childImageSharp.original.src}
       />
@@ -87,8 +93,8 @@ function Post({ data: { mdx } }: PostProps) {
         <StyledArticle>
           <MDXRenderer>{mdx.code.body}</MDXRenderer>
         </StyledArticle>
-        <section style={{ marginTop: "3rem" }}>
-          <ul>
+        <section style={{ margin: "1.5rem 0" }}>
+          <ul style={{ listStyleType: "none", padding: 0 }}>
             <li>
               <a
                 href={`https://mobile.twitter.com/search?q=${encodeURIComponent(
@@ -102,7 +108,7 @@ function Post({ data: { mdx } }: PostProps) {
             </li>
             <li>
               <a
-                href={`https://twitter.com/intent/tweet?url=https://www/studiodagger.com/${mdx.frontmatter.slug}&text=${mdx.frontmatter.title} by @NirjanKhadka`}
+                href={`https://twitter.com/intent/tweet?url=https://www.studiodagger.com/${mdx.frontmatter.slug}&text=${mdx.frontmatter.title} by @nk13_codes`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -120,7 +126,7 @@ function Post({ data: { mdx } }: PostProps) {
             </li>
           </ul>
         </section>
-        <Disqus config={disqusConfig} />
+        <Disqus style={{ marginBottom: "1.5rem" }} config={disqusConfig} />
       </Container>
     </MasterLayout>
   );

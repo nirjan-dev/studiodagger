@@ -49,7 +49,8 @@
     "lint:fix": "yarn lint --fix",
     "cy:open": "cypress open",
     "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
-    "test:visual": "backstop test"
+    "test:visual": "backstop test",
+    "visual:approve": "backstop approve"
   },
   "devDependencies": {
     "@testing-library/cypress": "^4.0.4",

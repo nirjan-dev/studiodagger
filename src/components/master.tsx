@@ -25,7 +25,7 @@ function MasterLayout({ children }: LayoutProps) {
             }
 
             html {
-              font-size: calc(${theme.fonts.fontSizes[1]} + 0.5vw);
+              font-size: calc(${theme.fonts.fontSizes[1]} + 0.3vw);
             }
 
             body {

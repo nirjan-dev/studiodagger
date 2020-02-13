@@ -26,21 +26,21 @@
     {
       "label": "Studiodagger-Homepage",
       "url": "http://localhost:8000/",
-      "delay": 6000,
+      "delay": 8000,
       "misMatchThreshold": 0.1,
       "requireSameDimensions": false
     },
     {
       "label": "Studiodagger-Blog",
       "url": "http://localhost:8000/blog",
-      "delay": 6000,
+      "delay": 8000,
       "misMatchThreshold": 0.1,
       "requireSameDimensions": false
     },
     {
       "label": "Studiodagger-Blog-post",
       "url": "http://localhost:8000/lexical-scope-and-closures",
-      "delay": 6000,
+      "delay": 8000,
       "misMatchThreshold": 0.1,
       "readySelector": "#disqus_thread",
       "requireSameDimensions": false
@@ -48,7 +48,7 @@
     {
       "label": "Studiodagger-contact",
       "url": "http://localhost:8000/contact",
-      "delay": 6000,
+      "delay": 8000,
       "misMatchThreshold": 0.1,
       "requireSameDimensions": false
     }
