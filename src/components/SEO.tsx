@@ -68,6 +68,10 @@ function SEO({ title, description, pathname, article, image }: SEOProps) {
           href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700|Merriweather:900&display=swap"
           rel="stylesheet"
         />
+        <link
+          rel="canonical"
+          href={`https://nirjan.dev${window ? window.location.pathname : ""}`}
+        />
         <meta name="description" content={description} />
         <meta name="image" content={ShowImage} />
         <meta name="apple-mobile-web-app-title" content={shortName} />
